@@ -1,39 +1,47 @@
 <div align="center">
-    <div align='center' class="bg-primary" style="padding:50px;">
-        <a href="index.html" class="btn btn-default rc-home_logo" >
-            <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' width='200'/>
-        </a>
-    </div>
-</div><div align="center">
-    <div class="row whiteBack">
-        <div class="col-xs-6 padding" onclick="Navigation.HomePage()">
-            <i class="fa fa-home fa-5x" aria-hidden="true"></i>
-            <BR>
-            <h4>HOME</h4>
-        </div>
-        <div class="col-xs-6 ghostWhite padding"  onclick="Navigation.SearchPage()" >
-            <i class="fa fa-search fa-5x"></i><BR>
-            <h4>DESIGN/ORDER</h4>
-        </div>
-
-        <div class="col-xs-6 ghostWhite padding" onclick="Navigation.OrderWithQuote()">
-            <i class="fa fa-pencil fa-5x"></i><BR>
-            <h4>ORDER w QUOTE</h4>
-        </div>
-        <div class="col-xs-6 padding"onclick="Navigation.SignInOnly()">
-            <i class="fa fa-user-circle fa-5x"></i>
-            <BR>
-            <h4>MY ACCOUNT</h4>
-        </div>
-        <div class="col-xs-6 padding" onclick="Navigation.ViewCart()">
-            <i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
-            <BR>
-            <h4>VIEW CART</h4>
-        </div>
-        <div class="col-xs-6 ghostWhite padding" onclick="Navigation.ContactUs()">
-            <i class="fa fa-compass fa-5x"></i><BR>
-            <h4>CONTACT US</h4>
-
-        </div>
-    </div>
+  <div align='center' class="rc-home_header">
+    <a href="index.html" class="btn btn-default rc-position_center" >
+      <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' width='200'/>
+    </a>
+  </div>
 </div>
+
+<ul class="row rc-home_navigation list-unstyled">
+  <li class="col-xs-6 rc-home_navigation--list" onclick="Navigation.HomePage()">
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-home rc-home_navigation--icon" aria-hidden="true"></i>
+      <h4 class="rc-home_navigation--title">HOME</h4>
+    </span>
+  </li>
+  <li class="col-xs-6 ghostWhite rc-home_navigation--list"  onclick="Navigation.SearchPage()" >
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-search rc-home_navigation--icon"></i>
+      <h4 class="rc-home_navigation--title">DESIGN/ORDER</h4>
+    </span>
+  </li>
+
+  <li class="col-xs-6 ghostWhite rc-home_navigation--list" onclick="Navigation.OrderWithQuote()">
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-pencil rc-home_navigation--icon"></i>
+      <h4 class="rc-home_navigation--title">ORDER w QUOTE</h4>
+    </span>
+  </li>
+  <li class="col-xs-6 rc-home_navigation--list"onclick="Navigation.SignInOnly()">
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-user-circle rc-home_navigation--icon"></i>
+      <h4 class="rc-home_navigation--title">MY ACCOUNT</h4>
+    </span>
+  </li>
+  <li class="col-xs-6 rc-home_navigation--list" onclick="Navigation.ViewCart()">
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-shopping-cart rc-home_navigation--icon" aria-hidden="true"></i>
+      <h4 class="rc-home_navigation--title">VIEW CART</h4>
+    </span>
+  </li>
+  <li class="col-xs-6 ghostWhite rc-home_navigation--list" onclick="Navigation.ContactUs()">
+    <span class="rc-position_vertical_center text-center">
+      <i class="fa fa-compass rc-home_navigation--icon"></i>
+      <h4 class="rc-home_navigation--title">CONTACT US</h4>
+    </span>
+  </li>
+</ul>

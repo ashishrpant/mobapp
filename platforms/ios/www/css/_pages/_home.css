@@ -1,7 +1,16 @@
-.header {
-  height: 50%;
+.rc-home_header {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b4ff+0,0079c5+100 */
+  background: #00b4ff; /* Old browsers */
+  background: -moz-linear-gradient(top, #00b4ff 0%, #0079c5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00b4ff 0%,#0079c5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #00b4ff 0%,#0079c5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b4ff', endColorstr='#0079c5',GradientType=0 ); /* IE6-9 */
+
+  height: 40vh;
   padding: 0;
   position: relative;
+
+  overflow: hidden;
 }
 
 .rc-home_logo {
@@ -11,4 +20,28 @@
   transform: translate(-50%, -50%);
   -moz-transform: -moz-translate(-50%, -50%);
   -webkit-transform: -webkit-translate(-50%, -50%);
+}
+
+.rc-home_navigation {
+  background: white;
+  height: 60vh;
+}
+
+.rc-home_navigation--list {
+  height: 33.33%;
+  padding: 0;
+  position: relative;
+}
+
+.rc-home_navigation--list .rc-position_vertical_center {
+  padding: 0;
+  width: 100%;
+}
+
+.rc-home_navigation--icon {
+  font-size: 5rem;
+}
+
+.rc-home_navigation--title {
+  font-size: 1.8rem;
 }
