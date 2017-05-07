@@ -1,0 +1,14 @@
+.header {
+  height: 50%;
+  padding: 0;
+  position: relative;
+}
+
+.rc-home_logo {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: -moz-translate(-50%, -50%);
+  -webkit-transform: -webkit-translate(-50%, -50%);
+}
