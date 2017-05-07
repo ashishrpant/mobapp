@@ -1,0 +1,13 @@
+.whiteBack{
+    background: white;
+}
+.padding{
+    padding:10px;
+}
+.ghostWhite {
+    background: ghostwhite;
+}
+
+.login-dialog .modal-dialog {
+    width: 300px;
+}

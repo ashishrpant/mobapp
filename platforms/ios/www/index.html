@@ -21,7 +21,7 @@
 -->
 <html>
 
-<head>
+  <head>
     <meta charset="utf-8"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="msapplication-tap-highlight" content="no"/>
@@ -47,57 +47,30 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/application.css"/>
+    <title>RF COAX INC</title>
+  </head>
+  <body>
+    <div>
+      <div class="row whiteBack" >
+        <div class="col-md-12" id="load-container"></div>
+      </div>
+    </div>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script src='./js/jquery.js'></script>
     <script src='./js/global_variables.js'></script>
     <script src='./js/search.js'></script>
     <script src='./js/logs.js'></script>
     <script src='./js/navigation.js'></script>
     <script src='./js/orderwithquote.js'></script>
+
     <script>
-        SearchAPI           = new Search();
-        Logs                = new Logs();
-        Navigation          = new Navigation();
-        OrderWithQuote      = new OrderWithQuote();
+      SearchAPI           = new Search();
+      Logs                = new Logs();
+      Navigation          = new Navigation();
+      OrderWithQuote      = new OrderWithQuote();
+      Navigation.HomePage();
     </script>
-
-
-    <title>RF COAX INC</title>
-    <style>
-        .whiteBack{
-            background: white;
-        }
-        .padding{
-            padding:10px;
-        }
-        .ghostWhite {
-            background: ghostwhite;
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-
-<div>
-        <div class="row whiteBack" >
-            <div class="col-md-12" id="load-container"></div>
-        </div>
-</div>
-
-
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-
-</body>
-
+    
+  </body>
 </html>
-<style>
-    .login-dialog .modal-dialog {
-        width: 300px;
-    }
-</style>
-<script>
-    Navigation.HomePage();
-</script>
