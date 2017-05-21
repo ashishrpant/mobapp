@@ -20,6 +20,7 @@
   transform: translate(-50%, -50%);
   -moz-transform: -moz-translate(-50%, -50%);
   -webkit-transform: -webkit-translate(-50%, -50%);
+  width: 60%;
 }
 
 .rc-home_navigation {
@@ -39,9 +40,9 @@
 }
 
 .rc-home_navigation--icon {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .rc-home_navigation--title {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
 }
