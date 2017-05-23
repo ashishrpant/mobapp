@@ -263,6 +263,8 @@ class Search {
 
             var PriceCap            = '';
 
+            var Description = '';
+
             switch(diameter_cable){
                 case '0':
                     PlatForm = '086';
@@ -300,9 +302,19 @@ class Search {
                 CableDescB  = CableDet['desc_seg_b'];
                 CableDescC  = CableDet['desc_seg_c'];
             });
+
+          if (DescFreq1 > DescFreq2){
+            ConnDescB1Commas = DescSegB2;
+          } else {
+            ConnDescB1Commas = DescSegB1;
+          }
+            Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'+ ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas;
+
             $.each(response["jacketList"], function(ind, JacketDet) {
                 JacketSegA   = JacketDet['pn_seg_a'];
                 JacketDescA   = JacketDet['desc_seg_a'];
+
+              Description =  Description +', '+JacketDescA;
             });
 
             $.each(response["lengthList"], function(ind, LengthDet) {
@@ -314,11 +326,20 @@ class Search {
             $.each(response["phaseMatchList"], function(ind, PhaseMatchDet) {
                 PhaseSegA   = PhaseMatchDet['pn_seg_a'];
                 PhaseDescA  = PhaseMatchDet['desc_seg_a'];
+
+              Description =  Description +', '+PhaseDescA;
             });
+
+
+
+
+            Description = Description+' , '+length_dia+' '+LengthDescB+' , '+CableDescC;
 
             $.each(response["testData"], function(ind, TestDataDet) {
                 TestSegA   = TestDataDet['pn_seg_a'];
                 TestDescA   = TestDataDet['desc_seg_a'];
+
+                Description = Description + ' ' + TestDescA;
             });
 
             $.each(response["discountList"], function(ind, DiscountDet) {
@@ -327,26 +348,22 @@ class Search {
 
             var PartNumber = '';
 
-            var Description = '';
 
-            if (DescFreq1 > DescFreq2){
-                ConnDescB1Commas = DescSegB2;
-            } else {
-                ConnDescB1Commas = DescSegB1;
-            }
+
 
 
 
             PartNumber = Connector1+Connector2+PlatForm+Conn1SegB+Conn2SegB+CableSegB+JacketSegA+LengthABet+length_dia+PhaseSegA+CableSegC+TestSegA;
 
+            /* Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'
+             + ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas+' ,' +
+             ''+JacketDescA+', '+PhaseDescA+', '+length_dia+' '+LengthDescB+' , '+CableDescC+' '+TestDescA;
+             */
 
-            Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'
-                + ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas+' ,' +
-                ''+JacketDescA+', '+PhaseDescA+', '+length_dia+' '+LengthDescB+' , '+CableDescC+' '+TestDescA;
 
 
 
-            //$description_generator = "RF Cable Assembly, " .
+          //$description_generator = "RF Cable Assembly, " .
             // $connector_des_a_1 . " to " . $connector_des_a_2 .
             // $description_rotation . $cabletype_des_a . " " .
             // $cabletype_des_b . $connector_des_b_1_commas .
@@ -361,7 +378,7 @@ class Search {
             $('.nav a[href="#search_result_array"]').tab('show');
             technical_spec = technical_spec+'<div><strong>Part Number:</strong> '+PartNumber+'</div>';
             technical_spec = technical_spec+'<div><strong>Description:</strong> '+Description+'</div>';
-            technical_spec = technical_spec+'<div><strong>Price:</strong> '+Description+'</div>';
+            technical_spec = technical_spec+'<div><strong>Price:</strong> '+PriceCap+'</div>';
             technical_spec = technical_spec+'<div><strong>Manufacturing Lead Time:</strong> Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.</div>';
             technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
             technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
