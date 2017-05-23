@@ -1,0 +1,17 @@
+.rc-input_field_container {
+  margin-bottom: 20px;
+}
+
+.rc-login_links {
+  clear: both;
+  display: block;
+  float: none;
+  margin-top: 20px;
+}
+
+.rc-sign_login_title {
+  display: block;
+  line-height: 1.5rem;
+  margin-bottom: 10px;
+  width: 100%;
+}
