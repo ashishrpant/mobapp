@@ -24,8 +24,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -37,8 +35,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -51,8 +47,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -64,8 +58,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -77,8 +69,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -90,8 +80,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-
         });
     }
 
@@ -103,8 +91,6 @@ class Navigation {
         }).done(function(response){
 
             $("#load-container").html(response);
-            Hamburger.initialize();
-            
         });
     }
 

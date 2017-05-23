@@ -1,19 +1,18 @@
 class Hamburger {
-  var menuStatus;
 
-  initialize () {
-    initMenuClickEvent();
-    bindClickMenuClose();
-    bindSwipeLeftToClose();
-    bindSwipeRightToOpen();
+  initialize() {
+    this.initMenuClickEvent();
+    this.bindClickMenuClose();
+    this.bindSwipeLeftToClose();
+    this.bindSwipeRightToOpen();
   }
 
   initMenuClickEvent() {
     $("a.showMenu").click(function(){
       if(menuStatus) {
-        closeMenu("0px", false);
+        this.closeMenu("0px", false);
       } else {
-        openMenu();
+        this.openMenu();
       }
     });
   }
@@ -51,7 +50,7 @@ class Hamburger {
   }
 
   bindSwipeLeftToClose() {
-    $('.pages').live("swipeleft", function(){
+    $('.pages').bind("swipeleft", function(){
   		if (menuStatus){
   		$(".ui-page-active").animate({
   			marginLeft: "0px",
@@ -61,7 +60,7 @@ class Hamburger {
   }
 
   bindSwipeRightToOpen() {
-    $('.pages').live("swiperight", function(){
+    $('.pages').bind("swiperight", function(){
   		if (!menuStatus){
   		$(".ui-page-active").animate({
   			marginLeft: "165px",
@@ -70,8 +69,3 @@ class Hamburger {
   	});
   }
 }
-
-$(function(){
-
-
-});

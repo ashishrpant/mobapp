@@ -55,7 +55,7 @@
         <div class="col-md-12" id="load-container"></div>
       </div>
     </div>
-    ß<script src='./js/jquery.js'></script>
+    <script src='./js/jquery.js'></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
@@ -63,15 +63,17 @@
     <script src='./js/search.js'></script>
     <script src='./js/logs.js'></script>
     <script src='./js/navigation.js'></script>
-    <script src='./js/hamburger.js'></script>
     <script src='./js/orderwithquote.js'></script>
+    <script src='./js/hamburger.js'></script>
 
     <script>
       SearchAPI           = new Search();
       Logs                = new Logs();
       Navigation          = new Navigation();
       OrderWithQuote      = new OrderWithQuote();
+      Hamburger           = new Hamburger();
       Navigation.HomePage();
+      Hamburger.initialize();
     </script>
 
   </body>
