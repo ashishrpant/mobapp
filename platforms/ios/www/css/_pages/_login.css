@@ -9,9 +9,18 @@
   margin-top: 20px;
 }
 
-.rc-sign_login_title {
+.rc-sign_login_title,
+.rc-sign_in_title {
   display: block;
   line-height: 1.5rem;
   margin-bottom: 10px;
   width: 100%;
+}
+
+.rc-sign_login_title {
+  margin-bottom: 10px;
+}
+
+.rc-sign_in_title {
+  margin-top: 20px;
 }
