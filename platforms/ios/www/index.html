@@ -49,14 +49,13 @@
     <link rel="stylesheet" href="css/application.css"/>
     <title>RF COAX INC</title>
   </head>
-  <body>
+  <body onload="onload();">
     <div>
       <div class="row whiteBack" >
         <div class="col-md-12" id="load-container"></div>
       </div>
     </div>
     <script src='./js/jquery.js'></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
     <script src='./js/global_variables.js'></script>
@@ -71,9 +70,7 @@
       Logs                = new Logs();
       Navigation          = new Navigation();
       OrderWithQuote      = new OrderWithQuote();
-      Hamburger           = new Hamburger();
       Navigation.HomePage();
-      Hamburger.initialize();
     </script>
 
   </body>

@@ -1,71 +1,55 @@
-class Hamburger {
 
-  initialize() {
-    this.initMenuClickEvent();
-    this.bindClickMenuClose();
-    this.bindSwipeLeftToClose();
-    this.bindSwipeRightToOpen();
-  }
 
-  initMenuClickEvent() {
-    $("a.showMenu").click(function(){
-      if(menuStatus) {
-        this.closeMenu("0px", false);
-      } else {
-        this.openMenu();
-      }
-    });
-  }
+  //$.mobile.pushStateEnabled = true;
 
-  openMenu() {
-    $('.ui-page-active').animate({
+
+function onload() {
+  var menuStatus;
+  var show = function() {
+    if(menuStatus) {
+      return;
+    }
+    $('#menu').show();
+    $.mobile.activePage.animate({
       marginLeft: "165px",
-      }, 300, function(){
-        menuStatus = true
-      });
-    return false;
-  }
-
-  closeMenu() {
-    $('.ui-page-active').animate({
-      marginLeft: 0,
-      }, 300, function(){
-        menuStatus = false
-      });
-
-    return false;
-  }
-
-  bindClickMenuClose() {
-    var listElem = $('#menu li');
-    listElem.find('a').click(function(){
-      var p = $(this).parent();
-      if($(p).hasClass('active')) {
-        listElem.removeClass('active');
-      } else {
-        listElem.removeClass('active');
-        $(p).addClass('active');
-      }
+    }, 300, function () {
+      menuStatus = true
     });
-  }
+  };
+  var hide = function() {
+    if(!menuStatus) {
+      return;
+    }
+    $.mobile.activePage.animate({
+      marginLeft: "0px",
+    }, 300, function () {
+      menuStatus = false
+      $('#menu').hide();
+    });
+  };
+  var toggle = function() {
+    if (!menuStatus) {
+      show();
+    } else {
+      hide();
+    }
+    return false;
+  };
 
-  bindSwipeLeftToClose() {
-    $('.pages').bind("swipeleft", function(){
-  		if (menuStatus){
-  		$(".ui-page-active").animate({
-  			marginLeft: "0px",
-  		  }, 300, function(){menuStatus = false});
-  		  }
-  	});
-  }
+  // Show/hide the menu
+  $("a.showMenu").click(toggle);
+  $('#menu, .pages').bind("swipeleft", hide);
+  $('.pages').bind("swiperight", show);
 
-  bindSwipeRightToOpen() {
-    $('.pages').bind("swiperight", function(){
-  		if (!menuStatus){
-  		$(".ui-page-active").animate({
-  			marginLeft: "165px",
-  		  }, 300, function(){menuStatus = true});
-  		  }
-  	});
-  }
+  $('div[data-role="page"]').bind('pagebeforeshow', function (event, ui) {
+    menuStatus = false;
+    $(".pages").css("margin-left", "0");
+  });
+
+  // Menu behaviour
+  $("#menu li a").click(function () {
+    var p = $(this).parent();
+    p.siblings().removeClass('active');
+    p.addClass('active');
+  });
 }
