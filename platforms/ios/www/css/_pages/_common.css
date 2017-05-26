@@ -1,9 +1,11 @@
-.whiteBack{
+.whiteBack {
     background: white;
 }
+
 .padding{
     padding:10px;
 }
+
 .ghostWhite {
     background: ghostwhite;
 }
@@ -27,4 +29,9 @@
   transform: translateY(-50%);
   -moz-transform: -moz-translateY(-50%);
   -webkit-transform: -webkit-translateY(-50%);
+}
+
+.rc-link {
+  color: black;
+  text-decoration: underline;
 }

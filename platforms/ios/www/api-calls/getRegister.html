@@ -1,24 +1,27 @@
-<div style="padding:10px;padding-top:0px;">
-    <div style="padding-top:0px;">
-        <a href="index.html">
-            <i class="fa fa-angle-left fa-3x" style="padding-top:0px;" aria-hidden="true"></i>
-        </a><h4>SIGN UP</h4></div>
-    <div style="margin-bottom:10px ;">
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            <input class="form-control" type="text" placeholder="Email address">
-        </div>
-    </div>
+<div class="page-wrapper">
+  <h2 class="page-title">Register</h2>
+  <h3 class="page-subtitle">your RF-Coax Account</h3>
 
-    <div class="input-group" style="margin-bottom:10px ;">
-        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-        <input class="form-control" type="password" placeholder="Password">
-    </div>
-    <div class="input-group">
-        <button class="btn btn-primary" onclick="Logs.SignUpOnly()">SIGN UP</button>
-    </div>
+  <div class="input-group rc-input_field_container">
+    <span class="input-group-addon">
+      <i class="fa fa-envelope-o fa-fw"></i>
+    </span>
+    <input class="form-control" type="text" placeholder="Email address" />
+  </div>
 
-    <div class="input-group">
-       <a href="#" onclick="Navigation.SignInOnly();">SIGN IN</a> &nbsp;<a href="javascript:void(0)" onclick="Navigation.ForgotPassword();">FORGET PASSWORD</a>
-    </div>
+  <div class="input-group rc-input_field_container">
+    <span class="input-group-addon">
+      <i class="fa fa-key fa-fw"></i>
+    </span>
+    <input class="form-control" type="password" placeholder="Password" />
+  </div>
+
+  <span class="input-group-btn rc-input_field_container">
+    <button class="btn btn-primary" onclick="Logs.SignUpOnly()">SIGN UP</button>
+  </span>
+
+  <div class="input-group rc-input_field_container">
+    <p class="rc-sign_in_title">Already have an accout? Please click below to sign in:</p>
+    <a href="javascript:void(0)" class="rc-link rc-login_links" onclick="Navigation.SignInOnly();">Sign In</a>
+  </div>
 </div>
