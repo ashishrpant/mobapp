@@ -14,3 +14,6 @@
 
 
   var api_urls = 'https://rfcoax.com/mobile-application/api-';
+
+  var menuStatus;
+  
