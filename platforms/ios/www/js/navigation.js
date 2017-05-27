@@ -12,6 +12,9 @@ class Navigation {
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
 
+            $("#inner").hide();
+            $("#home").show();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
@@ -22,12 +25,12 @@ class Navigation {
             url           : localurl+'getSearch.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
-
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
-
-
 
 
     OrderWithQuote(){
@@ -36,6 +39,9 @@ class Navigation {
             url           : localurl+'getQuoteOrder.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
 
             $("#load-container").html(response);
         });
@@ -48,6 +54,9 @@ class Navigation {
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
 
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
@@ -58,7 +67,9 @@ class Navigation {
             url           : localurl+'getLogin.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
-
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
@@ -69,7 +80,9 @@ class Navigation {
             url           : localurl+'getRegister.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
-
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
@@ -80,7 +93,9 @@ class Navigation {
             url           : localurl+'getForgotPassword.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
-
+            $("#inner").show();
+            $("#home").hide();
+            $('#navbar').collapse('hide');
             $("#load-container").html(response);
         });
     }
