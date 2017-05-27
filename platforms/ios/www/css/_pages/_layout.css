@@ -2,6 +2,15 @@
   padding: 20px 10px;
 }
 
+/*
+  Inner page has header fixed on top, so
+  need to add some space on top.
+*/
+
+.rc--inner_header + .page-wrapper {
+  padding-top: 70px;
+}
+
 .page-title {
   font-size: 3rem;
   font-weight: bold;

@@ -1,0 +1,28 @@
+.rc--inner_header {
+  background: #eeeeee;
+  top: 20px;
+}
+
+.navbar-shopping_cart {
+  font-size: 18px;
+  color: black;
+}
+
+.navbar-hamburger_bar {
+  font-size: 18px;
+  color: black;
+}
+
+.navbar-hamburger_brand {
+  height: 40px;
+}
+
+
+/*
+  overwriting properties of navbar of bootstrap
+*/
+
+.rc--inner_header .navbar-toggle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
