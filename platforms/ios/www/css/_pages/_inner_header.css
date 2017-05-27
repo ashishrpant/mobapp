@@ -15,6 +15,12 @@
 
 .navbar-hamburger_brand {
   height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 5px;
+  transform: translateX(-50%);
+  -moz-transform: -moz-translateX(-50%);
+  -webkit-transform: -webkit-translateX(-50%);
 }
 
 

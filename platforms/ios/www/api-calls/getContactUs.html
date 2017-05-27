@@ -1,38 +1,65 @@
-<div id="menu">
-  <h3>Menu</h3>
-	<ul>
-		<li class="active"><a href="#home" class="contentLink">Home </a></li>
-		<li><a href="#home" class="contentLink">About </a></li>
-		<li><a href="#home" class="contentLink">Portfolio </a></li>
-		<li><a href="#home" class="contentLink">Contact </a></li>
-	</ul>
-</div>
-<div data-role="page" class="pages" id="home">
-	<div data-role="header">
-	<a href="#"class="showMenu">Menu</a>
-		<h1>FB Style Menu</h1>
-	</div><!-- /header -->
-	<div data-role="content">
-    <div style="padding:10px;padding-top:0px;">
+<nav class="navbar navbar-default navbar-fixed-top rc--inner_header">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+        <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
+      </button>
 
-        <div  style="padding-top:0px;">
-            <a href="index.html">
-            <i class="fa fa-angle-left fa-3x" style="padding-top:0px;" aria-hidden="true"></i>
-        </a><h4>CONTACT US</h4></div>
+      <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' class="navbar-hamburger_brand"/>
 
-        <div class="list-group">
-
-            <a href="#" class="list-group-item"><strong> <i class="fa fa-home fa-1x" aria-hidden="true"></i> ADDRESS:</strong></a>
-            <a href="comgooglemaps://?center=36.880314,-121.399641&zoom=14&views=traffic" target="_blank" class="list-group-item">1725 San Felipe Rd, Ste 3</a>
-            <a href="#" class="list-group-item">Hollister , CA 95023</a>
-            <a href="#" class="list-group-item"><i class="fa fa-phone fa-1x" aria-hidden="true"></i> : 831-443-2156 </a>
-
-            <a href="#" class="list-group-item"> <i class="fa fa-fax fa-1x" aria-hidden="true"></i> : 831-443-2153</a>
-
-
-            <a href="#" class="list-group-item"><strong> <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i> HOURS:</strong></a>
-            <a href="#" class="list-group-item">Monday - Friday (8am - 4:30pm)</a>
-        </div>
+      <a class="navbar-brand" href="javascript:void(0)" onclick="Navigation.ViewCart();">
+        <i class="fa fa-shopping-cart navbar-shopping_cart"
+            aria-hidden="true"></i>
+      </a>
     </div>
-	</div><!-- /content -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
+        <li><a href="#about">Design/Order</a></li>
+        <li><a href="#contact">Order w Quote</a></li>
+        <li><a href="#contact">My Account</a></li>
+        <li><a href="#contact">View Cart</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <h2 class="page-title">Contact Us</h2>
+  <div class="list-group">
+    <a href="#" class="list-group-item">
+      <strong>
+        <i class="fa fa-home fa-1x" aria-hidden="true"></i>
+        ADDRESS:
+      </strong>
+    </a>
+    <a href="comgooglemaps://?center=36.880314,-121.399641&zoom=14&views=traffic"
+        target="_blank"
+        class="list-group-item">
+          1725 San Felipe Rd, Ste 3
+    </a>
+    <a href="#" class="list-group-item">
+      Hollister , CA 95023
+    </a>
+    <a href="#" class="list-group-item">
+      <i class="fa fa-phone fa-1x" aria-hidden="true"></i>
+      : 831-443-2156
+    </a>
+    <a href="#" class="list-group-item">
+      <i class="fa fa-fax fa-1x" aria-hidden="true"></i>
+      : 831-443-2153
+    </a>
+    <a href="#" class="list-group-item">
+      <strong>
+        <i class="fa fa-clock-o fa-1x" aria-hidden="true"></i>
+        HOURS:
+      </strong>
+    </a>
+    <a href="#" class="list-group-item">
+      Monday - Friday (8am - 4:30pm)
+    </a>
+  </div>
 </div>
