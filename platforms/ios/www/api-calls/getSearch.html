@@ -2,49 +2,50 @@
     SearchAPI.LoadFormList(0);
 </script>
 
-<div style="padding:10px;">
-    <div class="col-md-12">
-        <div class="btn-group">
-            <a href="index.html">
-                <i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div>&nbsp;</div>
-        <div class="input-group">
-            <input name="search" id='search' class="form-control" type="text" value="" placeholder="Enter Part Number">
-            <span class="input-group-btn">
-                <button class="btn btn-danger" onclick="SearchAPI.SearchReverSe()">Model Search</button>
-                <input type="hidden" name='search_form' id='search_form' value="SEARCH_FUNCTION"/>
-                </span>
-        </div>
-        <div>&nbsp;</div>
-        <div class="row">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#search_result" aria-controls="home" role="tab"
-                                                          data-toggle="tab">DESIGN YOUR CABLE</a></li>
-                <li role="presentation"><a href="#search_result_array" aria-controls="profile" role="tab"
-                                           data-toggle="tab">TECHNICAL SPEC</a></li>
-            </ul>
+<div class="page-wrapper">
+  <h2 class="page-title">Register</h2>
+  <h3 class="page-subtitle">your RF-Coax Account</h3>
 
-        </div>
+  <div class="input-group rc--search_input">
+      <input name="search" id='search' class="form-control" type="text" value="" placeholder="Enter Part Number">
+      <div class="input-group-btn">
+          <button class="btn btn-danger"
+                  onclick="SearchAPI.SearchReverSe()">
+                  Model Search
+          </button>
+          <input type="hidden" name='search_form' id='search_form' value="SEARCH_FUNCTION"/>
+      </div>
+  </div>
 
-        <div class="row">
-
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="search_result">
-
-
-                </div>
-                <div role="tabpanel" class="tab-pane" id="search_result_array">
-                    <div class="page-header"><h4>TECHNICICAL SPECIFICATIONS</h4></div>
-                    Please use the form or model search above to generate the TECHNICAL SPEC.
-                </div>
-
-            </div>
-
-
-        </div>
-
-
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#search_result"
+         aria-controls="home"
+         role="tab"
+         data-toggle="tab">
+         DESIGN YOUR CABLE
+      </a>
+    </li>
+    <li role="presentation">
+      <a href="#search_result_array"
+         aria-controls="profile"
+         role="tab"
+         data-toggle="tab">
+         TECHNICAL SPEC
+       </a>
+     </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel"
+         class="tab-pane active"
+         id="search_result">
     </div>
+    <div role="tabpanel" class="tab-pane" id="search_result_array">
+      <h4 class="page-header">TECHNICICAL SPECIFICATIONS</h4>
+      <div class="rc--normal_font">
+        Please use the form or model search above to generate the TECHNICAL SPEC.
+      </div>
+    </div>
+
+  </div>
 </div>

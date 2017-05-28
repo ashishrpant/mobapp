@@ -1,6 +1,6 @@
 .rc--inner_header {
   background: #eeeeee;
-  top: 20px;
+  border-top: 20px solid white;
 }
 
 .navbar-shopping_cart {
