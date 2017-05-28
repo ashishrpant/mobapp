@@ -76,18 +76,40 @@ class Search {
     }).done(function(response){
 
       // $("#search_result").html('<div class="control-group"><label title="CHOOSE: 086 platform (up to 65 GHz), 047 platform (up to 110 GHz), or 141 platform (up to 27 GHz)">Diameter: </label><div class="radio">' +
-      var form_param = '';
-      form_param = ('<div class="page-header"><h4>DESIGN YOUR CABLE</h4></div>');
+      var form_param = ('<form id="form">'+
+          '<div class="form-group">'+
+            '<label for="diameter_cable" class="search--normal_label">Diameter</label>'+
+            '<div class="btn-group clearfix" data-toggle="buttons">'+
+              '<label class="btn btn-default btn-md active">'+
+                '<input type="radio" '+ checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">'+
+                  '086'+
+              '</label>'+
 
-      form_param = form_param+('<form id="form"><div class="form-group"><label for="diameter_cable">Diameter</label></div><div class="form-group"><div class="btn-group" data-toggle="buttons"><label class="btn btn-default btn-md"><input type="radio" '+ checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">086</label><label class="btn btn-default btn-md"><input type="radio" '+ checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>047</label><label class="btn btn-default btn-md"><input type="radio" '+ checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>141</label></div></div>');
+              '<label class="btn btn-default btn-md">'+
+                '<input type="radio" '+ checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>'+
+                  '047'+
+              '</label>'+
+
+              '<label class="btn btn-default btn-md">'+
+                '<input type="radio" '+ checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>'+
+                  '141'+
+              '</label>'+
+            '</div>'+
+          '</div>');
 
       $.each(response["connectorList"], function(ind, connectorList) {
         //console.log(connectorList);
         connectorsArray = connectorsArray+"<option value='"+(connectorList.id)+"'>"+(connectorList.connector_name)+"</option>";
       });
-      form_param = form_param+('<div class="form-group"><label for="connector_1">Connector 1  <small>*</small></label><select name="connector_1" class="form-control" id="connector_1">' + connectorsArray + '</select></div>');
-      form_param = form_param+('<div class="form-group"><label for="connector_2">Connector 2  <small>*</small></label><select name="connector_2" class="form-control" id="connector_2">' + connectorsArray + '</select></div>');
+      form_param = form_param+('<div class="form-group">'+
+          '<label for="connector_1">Connector 1  <small>*</small></label>'+
+          '<select name="connector_1" class="form-control" id="connector_1">' + connectorsArray + '</select>'+
+        '</div>');
 
+      form_param = form_param+('<div class="form-group">'+
+          '<label for="connector_2">Connector 2  <small>*</small></label>'+
+          '<select name="connector_2" class="form-control" id="connector_2">' + connectorsArray + '</select>'+
+        '</div>');
 
       $.each(response["cableList"], function(ind, cableList) {
         //console.log(connectorList);
@@ -95,42 +117,59 @@ class Search {
       });
 
 
-      form_param = form_param+('<div class="form-group"><label for="cable_name">Cable Type  <small>*</small></label><select name="cable_name" class="form-control" id="cable_name">' + cableArray + '</select></div>');
-      form_param = form_param+('<div class="form-group"><label for="Length">Length  <small>*</small></label><input title="The Length should be more then 2inches OR 5cm" type="text" name="length_dia" id="length_dia" class="form-control" value="12"></div>');
+      form_param = form_param + ('<div class="form-group">'+
+        '<label for="cable_name">Cable Type  <small>*</small></label>'+
+        '<select name="cable_name" class="form-control" id="cable_name">' + cableArray + '</select>'+
+      '</div>');
+
+      form_param = form_param + ('<div class="form-group">'+
+        '<label for="Length">Length  <small>*</small></label>'+
+        '<input title="The Length should be more then 2inches OR 5cm" type="text" name="length_dia" id="length_dia" class="form-control" value="12">'+
+      '</div>');
 
       $.each(response["lengthList"], function(ind, lengthList) {
         //console.log(connectorList);
         LengthMatchArray = LengthMatchArray+"<option value='"+(lengthList.id)+"'>"+(lengthList.length_title)+"</option>";
       });
-      form_param = form_param+('<div class="form-group"><label for="lengthList">Unit Of Measure <small>*</small></label><select name="lengthList" class="form-control" id="lengthList">' + LengthMatchArray + '</select></div>');
-
+      form_param = form_param+('<div class="form-group">'+
+        '<label for="lengthList">Unit Of Measure <small>*</small></label>'+
+        '<select name="lengthList" class="form-control" id="lengthList">' + LengthMatchArray + '</select>'+
+      '</div>');
 
       $.each(response["phaseMatchList"], function(ind, phaseMatchList) {
-        //console.log(connectorList);
         PhaseMatchArray = PhaseMatchArray+"<option value='"+(phaseMatchList.id)+"'>"+(phaseMatchList.phase_type)+"</option>";
       });
-      form_param = form_param+('<div class="form-group"><label for="phase_mat">Phase Matching  <small>*</small></label><select name="phase_mat" class="form-control" id="phase_mat"><option value="-23">None</option>' + PhaseMatchArray + '</select></div>');
 
+      form_param = form_param+('<div class="form-group">'+
+        '<label for="phase_mat">Phase Matching  <small>*</small></label>'+
+        '<select name="phase_mat" class="form-control" id="phase_mat"><option value="-23">None</option>' + PhaseMatchArray + '</select>'+
+      '</div>');
 
       $.each(response["jacketList"], function(ind, jacketList) {
-        //console.log(connectorList);
         JacketArray = JacketArray+"<option value='"+(jacketList.id)+"'>"+(jacketList.jacket_type)+"</option>";
       });
-      form_param = form_param+('<div class="form-group"><label for="jacket_type">Jacket <small>*</small></label><select name="jacket_type" class="form-control" id="jacket_type"><option value="-23">None</option>' + JacketArray + '</select></div>');
+
+      form_param = form_param + ('<div class="form-group">'+
+        '<label for="jacket_type">Jacket <small>*</small></label>'+
+        '<select name="jacket_type" class="form-control" id="jacket_type"><option value="-23">None</option>' + JacketArray + '</select>'+
+      '</div>');
 
       $.each(response["testData"], function(ind, testData) {
-        //console.log(connectorList);
         DataMatchArray = DataMatchArray+"<option value='"+(testData.id)+"'>"+(testData.test_data_title)+"</option>";
       });
-      form_param = form_param+('<div class="form-group"><label for="test_data_val">Test Data  <small>*</small></label><select name="test_data_val" class="form-control" id="test_data_val">' + DataMatchArray + '</select></div>');
 
+      form_param = form_param+('<div class="form-group">'+
+        '<label for="test_data_val">Test Data  <small>*</small></label>'+
+        '<select name="test_data_val" class="form-control" id="test_data_val">' + DataMatchArray + '</select>'+
+      '</div>');
 
-
-      form_param = form_param+('<div class="form-group"><input type="button" onclick="SearchAPI.FormGenerator();" name="submit_frm" id="submit_frm" value="Submit" class="btn btn-success" />&nbsp;<input type="submit" name="res" id="res" value="Clear" class="btn btn-default" /></div></form>')
+      form_param = form_param+('<div class="form-group">'+
+        '<input type="button" onclick="SearchAPI.FormGenerator();" name="submit_frm" id="submit_frm" value="Submit" class="btn btn-primary" />&nbsp;'+
+        '<input type="submit" name="res" id="res" value="Clear" class="btn btn-default" />'+
+      '</div>'+
+      '</form>')
 
       $("#search_result").html(form_param);
-
-
 
     }).fail(function(jqXHR,textStatus){
       alert("Request failed");

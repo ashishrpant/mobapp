@@ -1,3 +1,15 @@
 .rc--search_input {
   margin-bottom: 30px;
 }
+
+.rc--search_content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0 0 5px 5px;
+  padding: 20px 10px;
+}
+
+.search--normal_label {
+  width: 100%;
+}

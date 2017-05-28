@@ -3,13 +3,12 @@
 </script>
 
 <div class="page-wrapper">
-  <h2 class="page-title">Register</h2>
-  <h3 class="page-subtitle">your RF-Coax Account</h3>
+  <h2 class="page-title">Design/Order</h2>
 
   <div class="input-group rc--search_input">
       <input name="search" id='search' class="form-control" type="text" value="" placeholder="Enter Part Number">
       <div class="input-group-btn">
-          <button class="btn btn-danger"
+          <button class="btn btn-primary"
                   onclick="SearchAPI.SearchReverSe()">
                   Model Search
           </button>
@@ -23,7 +22,7 @@
          aria-controls="home"
          role="tab"
          data-toggle="tab">
-         DESIGN YOUR CABLE
+         Design Your Cable
       </a>
     </li>
     <li role="presentation">
@@ -31,17 +30,17 @@
          aria-controls="profile"
          role="tab"
          data-toggle="tab">
-         TECHNICAL SPEC
+         Technical Spec
        </a>
      </li>
   </ul>
-  <div class="tab-content">
+  <div class="tab-content rc--search_content">
     <div role="tabpanel"
          class="tab-pane active"
          id="search_result">
     </div>
+
     <div role="tabpanel" class="tab-pane" id="search_result_array">
-      <h4 class="page-header">TECHNICICAL SPECIFICATIONS</h4>
       <div class="rc--normal_font">
         Please use the form or model search above to generate the TECHNICAL SPEC.
       </div>
