@@ -12,7 +12,7 @@ class Navigation {
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
 
-            $("#inner").hide();
+            $("#inner").hide().removeClass('rc--inner_header');
             $("#home").show();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
@@ -25,7 +25,7 @@ class Navigation {
             url           : localurl+'getSearch.html',
             contentType   : "application/x-www-form-urlencoded;"
         }).done(function(response){
-            $("#inner").show();
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
@@ -38,8 +38,8 @@ class Navigation {
             type          : "POST",
             url           : localurl+'getQuoteOrder.html',
             contentType   : "application/x-www-form-urlencoded;"
-        }).done(function(response){
-            $("#inner").show();
+        }).done(function(response) {
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
 
@@ -52,9 +52,8 @@ class Navigation {
             type          : "POST",
             url           : localurl+'getContactUs.html',
             contentType   : "application/x-www-form-urlencoded;"
-        }).done(function(response){
-
-            $("#inner").show();
+        }).done(function(response) {
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
@@ -66,8 +65,8 @@ class Navigation {
             type          : "POST",
             url           : localurl+'getLogin.html',
             contentType   : "application/x-www-form-urlencoded;"
-        }).done(function(response){
-            $("#inner").show();
+        }).done(function(response) {
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
@@ -79,8 +78,8 @@ class Navigation {
             type          : "POST",
             url           : localurl+'getRegister.html',
             contentType   : "application/x-www-form-urlencoded;"
-        }).done(function(response){
-            $("#inner").show();
+        }).done(function(response) {
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
@@ -92,8 +91,8 @@ class Navigation {
             type          : "POST",
             url           : localurl+'getForgotPassword.html',
             contentType   : "application/x-www-form-urlencoded;"
-        }).done(function(response){
-            $("#inner").show();
+        }).done(function(response) {
+            $("#inner").show().addClass('rc--inner_header');
             $("#home").hide();
             $('#navbar').collapse('hide');
             $("#load-container").html(response);
