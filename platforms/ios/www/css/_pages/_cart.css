@@ -1,4 +1,25 @@
-.table>tbody>tr>td, .table>tfoot>tr>td{
+[id="cart"] {
+  font-size: 12px;
+}
+
+.shopping_cart--sn {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  font-size: 12px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+ .shopping_cart--table_header:first-child {
+   width: 120px;
+ }
+
+.shopping_cart--quantity {
+  font-size: 12px;
+  width: 50px;
+}
+
+/*.table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
 }
 @media screen and (max-width: 600px) {
@@ -31,4 +52,4 @@
     table#cart tfoot td{display:block; }
     table#cart tfoot td .btn{display:block;}
 
-}
+}*/
