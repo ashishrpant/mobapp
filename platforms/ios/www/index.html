@@ -62,26 +62,30 @@
           </div>
       </div>
       <!-- This will only work on the inner pages.-->
-      <div id="inner" >
-        <a id="simple-menu" href="#sidr">Toggle menu</a>
+      <nav id="inner" class="navbar navbar-default rc--inner_header">
+        <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-menu" id="simple-menu" href="#sidr">
+                  <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
+              </a>
+                <!-- <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target=".navbar-collapse"
+                        aria-expanded="false" aria-controls="navbar">
+                    <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
+                </button> -->
 
-           <div id="sidr">
-               <!-- Your content -->
-               <ul>
-                 <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
-                 <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
-                 <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
-                 <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
-                 <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
-                 <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
-               </ul>
-           </div>
+                <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' class="navbar-hamburger_brand"/>
 
+                <a class="navbar-icon_cart" href="javascript:void(0)" onclick="Navigation.ViewCart();">
+                    <i class="fa fa-shopping-cart navbar-shopping_cart"
+                       aria-hidden="true"></i>
+                    <span class="navbar-cart_item_count navbar-cart_count_js">5</span>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-      </div>
-
-
-      <div id="load-container"></div>
+    <div id="load-container"></div>
   </div>
   <script src='./js/jquery.js'></script>
   <script type="text/javascript" src="cordova.js"></script>
@@ -105,9 +109,19 @@
     $("#inner").hide();
 
     $('#simple-menu').sidr();
-
-
   </script>
+
+  <div id="sidr">
+      <!-- Your content -->
+      <ul>
+        <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
+        <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
+        <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
+        <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
+        <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
+        <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
+      </ul>
+  </div>
 
 </body>
 
