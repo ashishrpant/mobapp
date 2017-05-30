@@ -11,9 +11,9 @@ class Search {
 
     serial_number    =   $('#search').val();
     form_attribute   =   $('#search_form').val();
-      /*
-       * POSTING DATA ONTO THE FORM
-       */
+    /*
+     * POSTING DATA ONTO THE FORM
+     */
 
     $.ajax({
       type          : "POST",
@@ -77,38 +77,38 @@ class Search {
 
       // $("#search_result").html('<div class="control-group"><label title="CHOOSE: 086 platform (up to 65 GHz), 047 platform (up to 110 GHz), or 141 platform (up to 27 GHz)">Diameter: </label><div class="radio">' +
       var form_param = ('<form id="form">'+
-          '<div class="form-group">'+
-            '<label for="diameter_cable" class="search--normal_label">Diameter</label>'+
-            '<div class="btn-group clearfix" data-toggle="buttons">'+
-              '<label class="btn btn-default btn-md active">'+
-                '<input type="radio" '+ checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">'+
-                  '086'+
-              '</label>'+
+      '<div class="form-group">'+
+      '<label for="diameter_cable" class="search--normal_label">Diameter</label>'+
+      '<div class="btn-group clearfix" data-toggle="buttons">'+
+      '<label class="btn btn-default btn-md active">'+
+      '<input type="radio" '+ checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">'+
+      '086'+
+      '</label>'+
 
-              '<label class="btn btn-default btn-md">'+
-                '<input type="radio" '+ checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>'+
-                  '047'+
-              '</label>'+
+      '<label class="btn btn-default btn-md">'+
+      '<input type="radio" '+ checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>'+
+      '047'+
+      '</label>'+
 
-              '<label class="btn btn-default btn-md">'+
-                '<input type="radio" '+ checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>'+
-                  '141'+
-              '</label>'+
-            '</div>'+
-          '</div>');
+      '<label class="btn btn-default btn-md">'+
+      '<input type="radio" '+ checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>'+
+      '141'+
+      '</label>'+
+      '</div>'+
+      '</div>');
 
       $.each(response["connectorList"], function(ind, connectorList) {
         //console.log(connectorList);
         connectorsArray = connectorsArray+"<option value='"+(connectorList.id)+"'>"+(connectorList.connector_name)+"</option>";
       });
       form_param = form_param+('<div class="form-group">'+
-          '<label for="connector_1">Connector 1  <small>*</small></label>'+
-          '<select name="connector_1" class="form-control" id="connector_1">' + connectorsArray + '</select>'+
+        '<label for="connector_1">Connector 1  <small>*</small></label>'+
+        '<select name="connector_1" class="form-control" id="connector_1">' + connectorsArray + '</select>'+
         '</div>');
 
       form_param = form_param+('<div class="form-group">'+
-          '<label for="connector_2">Connector 2  <small>*</small></label>'+
-          '<select name="connector_2" class="form-control" id="connector_2">' + connectorsArray + '</select>'+
+        '<label for="connector_2">Connector 2  <small>*</small></label>'+
+        '<select name="connector_2" class="form-control" id="connector_2">' + connectorsArray + '</select>'+
         '</div>');
 
       $.each(response["cableList"], function(ind, cableList) {
@@ -120,12 +120,12 @@ class Search {
       form_param = form_param + ('<div class="form-group">'+
         '<label for="cable_name">Cable Type  <small>*</small></label>'+
         '<select name="cable_name" class="form-control" id="cable_name">' + cableArray + '</select>'+
-      '</div>');
+        '</div>');
 
       form_param = form_param + ('<div class="form-group">'+
         '<label for="Length">Length  <small>*</small></label>'+
         '<input title="The Length should be more then 2inches OR 5cm" type="text" name="length_dia" id="length_dia" class="form-control" value="12">'+
-      '</div>');
+        '</div>');
 
       $.each(response["lengthList"], function(ind, lengthList) {
         //console.log(connectorList);
@@ -134,7 +134,7 @@ class Search {
       form_param = form_param+('<div class="form-group">'+
         '<label for="lengthList">Unit Of Measure <small>*</small></label>'+
         '<select name="lengthList" class="form-control" id="lengthList">' + LengthMatchArray + '</select>'+
-      '</div>');
+        '</div>');
 
       $.each(response["phaseMatchList"], function(ind, phaseMatchList) {
         PhaseMatchArray = PhaseMatchArray+"<option value='"+(phaseMatchList.id)+"'>"+(phaseMatchList.phase_type)+"</option>";
@@ -143,7 +143,7 @@ class Search {
       form_param = form_param+('<div class="form-group">'+
         '<label for="phase_mat">Phase Matching  <small>*</small></label>'+
         '<select name="phase_mat" class="form-control" id="phase_mat"><option value="-23">None</option>' + PhaseMatchArray + '</select>'+
-      '</div>');
+        '</div>');
 
       $.each(response["jacketList"], function(ind, jacketList) {
         JacketArray = JacketArray+"<option value='"+(jacketList.id)+"'>"+(jacketList.jacket_type)+"</option>";
@@ -152,7 +152,7 @@ class Search {
       form_param = form_param + ('<div class="form-group">'+
         '<label for="jacket_type">Jacket <small>*</small></label>'+
         '<select name="jacket_type" class="form-control" id="jacket_type"><option value="-23">None</option>' + JacketArray + '</select>'+
-      '</div>');
+        '</div>');
 
       $.each(response["testData"], function(ind, testData) {
         DataMatchArray = DataMatchArray+"<option value='"+(testData.id)+"'>"+(testData.test_data_title)+"</option>";
@@ -161,13 +161,13 @@ class Search {
       form_param = form_param+('<div class="form-group">'+
         '<label for="test_data_val">Test Data  <small>*</small></label>'+
         '<select name="test_data_val" class="form-control" id="test_data_val">' + DataMatchArray + '</select>'+
-      '</div>');
+        '</div>');
 
       form_param = form_param+('<div class="form-group">'+
         '<input type="button" onclick="SearchAPI.FormGenerator();" name="submit_frm" id="submit_frm" value="Submit" class="btn btn-primary" />&nbsp;'+
         '<input type="submit" name="res" id="res" value="Clear" class="btn btn-default" />'+
-      '</div>'+
-      '</form>')
+        '</div>'+
+        '</form>')
 
       $("#search_result").html(form_param);
 
@@ -394,10 +394,10 @@ class Search {
 
       PartNumber = Connector1+Connector2+PlatForm+Conn1SegB+Conn2SegB+CableSegB+JacketSegA+LengthABet+length_dia+PhaseSegA+CableSegC+TestSegA;
 
-        /* Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'
-         + ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas+' ,' +
-         ''+JacketDescA+', '+PhaseDescA+', '+length_dia+' '+LengthDescB+' , '+CableDescC+' '+TestDescA;
-         */
+      /* Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'
+       + ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas+' ,' +
+       ''+JacketDescA+', '+PhaseDescA+', '+length_dia+' '+LengthDescB+' , '+CableDescC+' '+TestDescA;
+       */
 
 
 
@@ -421,6 +421,8 @@ class Search {
       technical_spec = technical_spec+'<div><strong>Manufacturing Lead Time:</strong> Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.</div>';
       technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
       technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
+      technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" name="submit_frm" id="submit_frm" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div></form>')
+
       $("#search_result_array").html(technical_spec);
 
     });
@@ -473,10 +475,12 @@ class Search {
         cableArray = cableArray+"<option value='"+(cableList.id)+"' "+cableCheck+">"+(cableList.cable_name)+"</option>";
       });
 
-      var diameter_cable = obj.diameter_cable;
-      var length_dia = obj.length_dia;
-      var phase_mat = obj.phase_mat;
-      var test_data_val = obj.test_data_val;
+      // var diameter_cable = obj.diameter_cable;
+      // var length_dia = obj.length_dia;
+      // var phase_mat = obj.phase_mat;
+      // var test_data_val = obj.test_data_val;
+      form_param = form_param+('<div class="form-group"><label for="cable_name">Cable Type  <small>*</small></label><select name="cable_name" class="form-control" id="cable_name">' + cableArray + '</select></div>');
+      form_param = form_param+('<div class="form-group"><label for="Length">Length  <small>*</small></label><input title="The Length should be more then 2inches OR 5cm" type="text" name="length_dia" id="length_dia" class="form-control" value="12"></div>');
 
 
 
@@ -531,7 +535,6 @@ class Search {
       });
       form_param = form_param+('<div class="form-group"><label for="test_data_val">Test Data  <small>*</small></label><select name="test_data_val" class="form-control" id="test_data_val">' + DataMatchArray + '</select></div>');
       form_param = form_param+('<div class="form-group"><input type="button" onclick="SearchAPI.FormGenerator();" name="submit_frm" id="submit_frm" value="Submit" class="btn btn-success" />&nbsp;<input type="submit" name="res" id="res" value="Clear" class="btn btn-default" /></div></form>')
-
 
       $("#search_result").html(form_param);
 

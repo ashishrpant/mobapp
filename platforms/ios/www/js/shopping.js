@@ -109,4 +109,8 @@
       $("#load-container").html('<div class="well well-sm">'+form_param+shopping_cart+response+'</div>');
       // });
     }
+
+    AddCart(){
+
+    }
   }
