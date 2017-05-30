@@ -32,7 +32,9 @@
                             default-src * data: blob: ws: wss: gap://ready file://*;
                             style-src * 'unsafe-inline';
                             script-src * 'unsafe-inline' 'unsafe-eval';
-                            connect-src * ws: wss:;">
+                            connect-src * ws: wss:;
+                            script-src 'self' http://rfcoax.com 'unsafe-inline' 'unsafe-eval';"
+                             >
 
 
     <!-- Good default declaration:
@@ -60,34 +62,23 @@
           </div>
       </div>
       <!-- This will only work on the inner pages.-->
-      <nav id="inner" class="navbar navbar-default navbar-fixed-top rc--inner_header">
-          <div class="container">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed"
-                          data-toggle="collapse" data-target=".navbar-collapse"
-                          aria-expanded="false" aria-controls="navbar">
-                      <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
-                  </button>
+      <div id="inner" >
+        <a id="simple-menu" href="#sidr">Toggle menu</a>
 
-                  <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' class="navbar-hamburger_brand"/>
+           <div id="sidr">
+               <!-- Your content -->
+               <ul>
+                 <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
+                 <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
+                 <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
+                 <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
+                 <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
+                 <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
+               </ul>
+           </div>
 
-                  <a class="navbar-brand" href="javascript:void(0)" onclick="Navigation.ViewCart();">
-                      <i class="fa fa-shopping-cart navbar-shopping_cart"
-                         aria-hidden="true"></i>
-                  </a>
-              </div>
-              <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav">
-                      <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
-                      <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
-                      <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
-                      <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
-                      <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
-                      <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+
+      </div>
 
 
       <div id="load-container"></div>
@@ -103,7 +94,7 @@
   <script src='./js/orderwithquote.js'></script>
   <script src='./js/hamburger.js'></script>
   <script src='./js/shopping.js'></script>
-
+  <script type="text/javascript" src="./js/sidr.min.js"></script>
   <script>
     SearchAPI = new Search()
     Logs = new Logs()
@@ -112,6 +103,9 @@
     Shopping = new Shopping()
     Navigation.HomePage();
     $("#inner").hide();
+
+    $('#simple-menu').sidr();
+
 
   </script>
 
