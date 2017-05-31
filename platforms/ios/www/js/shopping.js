@@ -93,6 +93,7 @@ class Shopping {
     $("#inner").show().addClass('rc--inner_header');
     $("#home").hide();
     $('#navbar').collapse('hide');
+    $('#nav_child').show();
     $("#load-container").html(main_content);
   }
 }

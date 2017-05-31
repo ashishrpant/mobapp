@@ -34,7 +34,7 @@
                             script-src * 'unsafe-inline' 'unsafe-eval';
                             connect-src * ws: wss:;
                             script-src 'self' http://rfcoax.com 'unsafe-inline' 'unsafe-eval';"
-                             >
+    >
 
 
     <!-- Good default declaration:
@@ -52,34 +52,34 @@
     <title>RF COAX INC</title>
 </head>
 <body onload="onload()">
-  <div class="whiteBack">
-      <!-- This will only appear on the home page.-->
-      <div align="center" id="home">
-          <div align='center' class="rc-home_header">
-              <a href="index.html" class="btn btn-default rc-position_center" >
-                  <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' width='80%'/>
-              </a>
-          </div>
-      </div>
-      <!-- This will only work on the inner pages.-->
-      <nav id="inner" class="navbar navbar-default rc--inner_header">
+<div class="whiteBack">
+    <!-- This will only appear on the home page.-->
+    <div align="center" id="home">
+        <div align='center' class="rc-home_header">
+            <a href="index.html" class="btn btn-default rc-position_center">
+                <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' width='80%'/>
+            </a>
+        </div>
+    </div>
+    <!-- This will only work on the inner pages.-->
+    <nav id="inner" class="navbar navbar-default rc--inner_header">
         <div class="container">
             <div class="navbar-header">
-              <a class="navbar-menu" id="simple-menu" href="#sidr">
-                  <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
-              </a>
+                <!--<a class="navbar-menu" id="simple-menu" href="#sidr">-->
+                <!--<i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>-->
+                <!--</a>-->
 
-                <div id="sidr">
-                    <!-- Your content -->
-                    <ul>
-                        <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
-                        <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
-                        <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
-                        <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
-                        <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
-                        <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
-                    </ul>
-                </div>
+                <!--<div id="sidr">-->
+                <!--&lt;!&ndash; Your content &ndash;&gt;-->
+                <!--<ul>-->
+                <!--<li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>-->
+                <!--<li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>-->
+                <!--<li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>-->
+                <!--<li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>-->
+                <!--<li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>-->
+                <!--<li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
 
                 <!-- <button type="button" class="navbar-toggle collapsed"
                         data-toggle="collapse" data-target=".navbar-collapse"
@@ -89,7 +89,7 @@
 
                 <img src='./img/rfcoax-logo.png' alt="RFCOAX INC" title='RFCOAX INC' class="navbar-hamburger_brand"/>
 
-                <a class="navbar-icon_cart" href="javascript:void(0)" onclick="Navigation.ViewCart();">
+                <a class="navbar-icon_cart" href="javascript:void(0)" onclick="Navigation.ViewCart()">
                     <i class="fa fa-shopping-cart navbar-shopping_cart"
                        aria-hidden="true"></i>
                     <span class="navbar-cart_item_count navbar-cart_count_js">5</span>
@@ -97,33 +97,82 @@
             </div>
         </div>
     </nav>
+    <nav id="nav_child" class="navbar navbar-inverse navbar-fixed-bottom animate" style="bottom:0;">
 
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right mobile-bar">
+                <li>
+                    <a href="javascript:void(0)" onclick="Navigation.HomePage()">
+                        <span class="menu-icon fa fa-home"></span>
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Navigation.SearchPage()">
+                        <span class="menu-icon fa fa-cogs"></span>
+                        <span>DESIGN</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">
+                        <span class="menu-icon fa fa-pencil "></span>
+                        QUOTE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" onclick="Navigation.ContactUs()">
+                        <span class="menu-icon fa fa-phone"></span>
+                        <span>CONTACT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Navigation.SearchPage()">
+                        <span class="menu-icon fa fa-search"></span>
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div id="load-container"></div>
-  </div>
-  <script src='./js/jquery.js'></script>
-  <script type="text/javascript" src="cordova.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</div>
+<script src='./js/jquery.js'></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
 
-  <script src='./js/global_variables.js'></script>
-  <script src='./js/search.js'></script>
-  <script src='./js/logs.js'></script>
-  <script src='./js/navigation.js'></script>
-  <script src='./js/orderwithquote.js'></script>
-  <script src='./js/hamburger.js'></script>
-  <script src='./js/shopping.js'></script>
-  <script type="text/javascript" src="./js/sidr.min.js"></script>
-  <script>
-    SearchAPI = new Search()
-    Logs = new Logs()
-    Navigation = new Navigation()
-    OrderWithQuote = new OrderWithQuote()
-    Shopping = new Shopping()
-    Navigation.HomePage();
-    $("#inner").hide();
+<script src='./js/global_variables.js'></script>
+<script src='./js/search.js'></script>
+<script src='./js/logs.js'></script>
+<script src='./js/navigation.js'></script>
+<script src='./js/orderwithquote.js'></script>
+<script src='./js/hamburger.js'></script>
+<script src='./js/shopping.js'></script>
+<script type="text/javascript" src="./js/sidr.min.js"></script>
+<script>
+  SearchAPI = new Search()
+  Logs = new Logs()
+  Navigation = new Navigation()
+  OrderWithQuote = new OrderWithQuote()
+  Shopping = new Shopping()
+  Navigation.HomePage()
+  $('#inner').hide()
 
-    $('#simple-menu').sidr();
-  </script>
+  // $('#simple-menu').sidr();
 
+  $('a[href="#navbar-more-show"], .navbar-more-overlay').on('click', function (event) {
+    event.preventDefault()
+    $('body').toggleClass('navbar-more-show')
+    if ($('body').hasClass('navbar-more-show')) {
+      $('a[href="#navbar-more-show"]').closest('li').addClass('active')
+    } else {
+      $('a[href="#navbar-more-show"]').closest('li').removeClass('active')
+    }
+    return false
+  });
+
+</script>
 
 
 </body>
