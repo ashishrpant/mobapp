@@ -68,6 +68,19 @@
               <a class="navbar-menu" id="simple-menu" href="#sidr">
                   <i class="fa fa-bars navbar-hamburger_bar" aria-hidden="true"></i>
               </a>
+
+                <div id="sidr">
+                    <!-- Your content -->
+                    <ul>
+                        <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
+                        <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
+                        <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
+                        <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
+                        <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
+                    </ul>
+                </div>
+
                 <!-- <button type="button" class="navbar-toggle collapsed"
                         data-toggle="collapse" data-target=".navbar-collapse"
                         aria-expanded="false" aria-controls="navbar">
@@ -111,17 +124,7 @@
     $('#simple-menu').sidr();
   </script>
 
-  <div id="sidr">
-      <!-- Your content -->
-      <ul>
-        <li class="active"><a href="javascript:void(0)" onclick="Navigation.HomePage()">Home</a></li>
-        <li><a href="javascript:void(0)" onclick="Navigation.SearchPage()">Design/Order</a></li>
-        <li><a href="javascript:void(0)" onclick="Navigation.OrderWithQuote()">Order w Quote</a></li>
-        <li><a href="javascript:void(0)" onclick="Navigation.SignInOnly()">My Account</a></li>
-        <li><a href="javascript:void(0)" onclick="Shopping.ViewCart()">View Cart</a></li>
-        <li><a href="javascript:void(0)" onclick="Navigation.ContactUs()">Contact Us</a></li>
-      </ul>
-  </div>
+
 
 </body>
 
