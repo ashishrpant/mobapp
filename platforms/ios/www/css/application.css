@@ -2,4 +2,4 @@
 @import 'font-awesome.min.css';
 @import '_pages/index.css';
 @import 'jquery.sidr.min.css';
-@import 'menu.css';
+/**/@import 'menu.css';

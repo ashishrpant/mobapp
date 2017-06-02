@@ -1,19 +1,23 @@
 .rc--inner_header {
-  background: #eeeeee;
-  border-top: 20px solid white;
+  /*background: #eeeeee;*/
+  background: #00b4ff; /* Old browsers */
   position: fixed;
   top: 0;
   width: 100%;
+  padding-top: 20px;
+  margin-top:-4px;
 }
 
 .navbar-shopping_cart {
   font-size: 18px;
-  color: black;
+  color: white;
+  margin-right:25px;
 }
 
 .navbar-hamburger_bar {
   font-size: 18px;
-  color: black;
+  color: white;
+  margin-left:10px;
 }
 
 .navbar-hamburger_brand {
@@ -59,6 +63,8 @@
   right: 5px;
   text-align: center;
   width: 15px;
+
+  margin-right:10px;
 }
 
 /*
@@ -66,6 +72,6 @@
 */
 
 .rc--inner_header .navbar-toggle {
-  margin-top: 5px;
+  /*margin-top: 5px;*/
   margin-bottom: 5px;
 }
