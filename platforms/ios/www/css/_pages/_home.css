@@ -29,9 +29,11 @@
 }
 
 .rc-home_navigation--list {
+  float: left;
   height: 33.33%;
   padding: 0;
   position: relative;
+  width: 50%;
 }
 
 .rc-home_navigation--list .rc-position_vertical_center {

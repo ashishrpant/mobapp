@@ -5,13 +5,13 @@
   top: 0;
   width: 100%;
   padding-top: 20px;
-  margin-top:-4px;
+  z-index: 100;
 }
 
 .navbar-shopping_cart {
   font-size: 18px;
   color: white;
-  margin-right:25px;
+  margin-right: 15px;
 }
 
 .navbar-hamburger_bar {
@@ -24,7 +24,7 @@
   height: 40px;
   left: 50%;
   position: absolute;
-  top: 5px;
+  top: 25px;
   transform: translateX(-50%);
   -moz-transform: -moz-translateX(-50%);
   -webkit-transform: -webkit-translateX(-50%);
