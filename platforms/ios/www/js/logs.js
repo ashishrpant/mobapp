@@ -29,7 +29,42 @@ class Logs{
      */
 
     SignInOnly(){
-        console.log("testing login");
+
+        //console.log("testing");
+          var data = $('#userForm').serialize().split("&");
+
+          /**
+           * Converting the serialized data into JSON string.
+           */
+
+          var obj={};
+          for(var key in data)
+          {
+            obj[data[key].split("=")[0]] = data[key].split("=")[1];
+          }
+
+
+          console.log(obj);
+          var emailAddress           = obj.emailAddress;
+          var password               = obj.password;
+
+          console.log(data);
+          $.ajax({
+            type          : "POST",
+            url           : url+'userLogin.php',
+            contentType   : "application/x-www-form-urlencoded;",
+            data          : { "emailAddress":emailAddress,
+                              "password":password,
+                              'action':'LOGIN'}
+          }).done(function(response){
+              console.log("Form submitted")
+
+            $("#inner").hide().removeClass('rc--inner_header');
+            $("#home").show();
+            $('#navbar').collapse('hide');
+            $('#nav_child').hide();
+            $("#load-container").html(response);
+          });
 
     }
 
