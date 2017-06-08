@@ -74,6 +74,7 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
             $("#load-container").html(response);
         });
     }

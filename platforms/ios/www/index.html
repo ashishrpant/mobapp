@@ -48,6 +48,45 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/application.css"/>
     <title>RF COAX INC</title>
+
+    <style>
+
+    .bs-callout-danger {
+        border-left-color: #ce4844;border-left-width: 5px;
+    }
+    .date {
+  position: fixed;
+  width: 70px;
+  font-family: Georgia, serif;
+  color: #999;
+  margin: 0 auto;
+ }
+
+.day, .month, .year {
+  position: absolute;
+  }
+
+.day {
+  font-size: 30px;
+  top: 15px;
+  }
+
+.month {
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  }
+
+.year {
+  top: 19px;
+  right: 0;
+  font-size: 20px;
+  rotation: -90deg !important;
+  /* ** Hacks ** */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  }
+    </style>
 </head>
 <body onload="onload()">
   <!-- This will only appear on the home page.-->
@@ -152,15 +191,14 @@
     <script src='./js/orderwithquote.js'></script>
     <script src='./js/hamburger.js'></script>
     <script src='./js/shopping.js'></script>
-
     <script type="text/javascript" src="./js/sidr.min.js"></script>
     <script>
-      SearchAPI = new Search()
-      Logs = new Logs()
-      Navigation = new Navigation()
-      OrderWithQuote = new OrderWithQuote()
-      Shopping = new Shopping()
-      Navigation.HomePage()
+      SearchAPI = new Search();
+      Logs = new Logs();
+      Navigation = new Navigation();
+      OrderWithQuote = new OrderWithQuote();
+      Shopping = new Shopping();
+      Navigation.HomePage();
 
       $('#inner').hide()
 

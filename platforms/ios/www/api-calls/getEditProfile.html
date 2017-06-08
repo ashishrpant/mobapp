@@ -1,7 +1,6 @@
-r<div class="page-wrapper">
-  <h2 class="page-title">Register</h2>
-  <h3 class="page-subtitle">your RF-Coax Account</h3>
-<form id='registerForm'>
+<div class="page-wrapper">
+  <h2 class="page-title">Edit Profile</h2>
+<form id='editProfile'>
   <div class="input-group rc-input_field_container">
     <span class="input-group-addon">
       First Name <i class="fa fa-user-o fa-fw"></i>
@@ -31,20 +30,8 @@ r<div class="page-wrapper">
     </span>
     <input class="form-control" type="text" id='emailAddress' placeholder="Email address" />
   </div>
-
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      Password <i class="fa fa-key fa-fw"></i>
-    </span>
-    <input class="form-control" type="password" placeholder="Password" />
-  </div>
-
   <span class="input-group-btn rc-input_field_container">
-    <button class="btn btn-primary" onclick="Logs.SignUpOnly()">SIGN UP <i class="fa fa-sign-in fa-fw"></i></button>
+    <button class="btn btn-primary" onclick="Logs.EditProfileSave()">Save Changes <i class="fa fa-floppy-o fa-fw"></i></button>
   </span>
 </form>
-  <div class="input-group rc-input_field_container">
-    <p class="rc-sign_in_title">Already have an accout? Please click below to sign in:</p>
-    <a href="javascript:void(0)" class="rc-link rc-login_links" onclick="Navigation.SignInOnly();">Sign In</a>
-  </div>
 </div>

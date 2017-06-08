@@ -6,7 +6,7 @@ class Dashboard {
 
   GoToDashBoard(loginName){
 
-    console.log(loginName);
+    //console.log(loginName);
     $.ajax({
       type          : "POST",
       url           : localurl+'getDashBoard.html',
@@ -42,7 +42,21 @@ class Dashboard {
   ChangePasswordAction(){
 
   }
+  ViewOrderList(){
+    $.ajax({
+      type          : "POST",
+      url           : localurl+'getOrderList.html',
+      contentType   : "application/x-www-form-urlencoded;"
+    }).done(function(response) {
+      $("#inner").show();
+      $("#home").hide();
+      $('#navbar').collapse('hide');
+      $('#nav_child').show();
 
-  
+      $("#load-container").html(response);
+
+    });
+  }
+
 
 }
