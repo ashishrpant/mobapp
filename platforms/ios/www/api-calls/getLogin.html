@@ -1,7 +1,12 @@
 <div class="page-wrapper">
   <h2 class="page-title">Sign In</h2>
   <h3 class="page-subtitle">to continue using RF Coax</h3>
-  <form id="userForm">
+
+  <div class="alert alert-danger" role="alert" style="display:none;" id="error_log">
+
+  </div>
+
+  <form id="userForm" action="javascript:void(0)">
     <div class="input-group rc-input_field_container">
       <span class="input-group-addon">
         <i class="fa fa-envelope-o fa-fw"></i>
@@ -13,7 +18,9 @@
       <span class="input-group-addon">
         <i class="fa fa-key fa-fw"></i>
       </span>
-      <input class="form-control" type="password" name="password" id="password" placeholder="Password" />
+
+      <input class="form-control" type="password" name="password" id="password" placeholder="Email address" />
+
     </div>
 
     <span class="input-group-btn rc-input_field_container">

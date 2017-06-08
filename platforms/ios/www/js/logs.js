@@ -29,41 +29,39 @@ class Logs{
      */
 
     SignInOnly(){
-
-        //console.log("testing");
-          var data = $('#userForm').serialize().split("&");
-
-          /**
-           * Converting the serialized data into JSON string.
-           */
-
-          var obj={};
-          for(var key in data)
-          {
-            obj[data[key].split("=")[0]] = data[key].split("=")[1];
-          }
+        $("#error_log").hide();
 
 
-          console.log(obj);
-          var emailAddress           = obj.emailAddress;
-          var password               = obj.password;
-
-          console.log(data);
           $.ajax({
             type          : "POST",
             url           : url+'userLogin.php',
             contentType   : "application/x-www-form-urlencoded;",
-            data          : { "emailAddress":emailAddress,
-                              "password":password,
+            data          : { "emailAddress":$('#emailAddress').val(),
+                              "userPassword":$('#password').val(),
                               'action':'LOGIN'}
           }).done(function(response){
-              console.log("Form submitted")
+              console.log(response)
 
-            $("#inner").hide().removeClass('rc--inner_header');
-            $("#home").show();
+           var returned_json = JSON.parse(response);
+            $("#inner").show();
+            $("#home").hide();
             $('#navbar').collapse('hide');
-            $('#nav_child').hide();
-            $("#load-container").html(response);
+            $('#nav_child').show();
+
+            var response_result = returned_json['success'];
+            var getBackError = returned_json['userInformation'].errorMsg
+
+            console.log(response_result);
+            if(response_result == false){
+              $("#error_log").show();
+              $("#error_log").html(getBackError);
+            }else{
+              Dashboard = new Dashboard();
+              Dashboard.GoToDashBoard(returned_json['userInformation'].rfcoaxUserName);
+            }
+
+
+           // $("#load-container").html("response_result <br><br><br>"+response);
           });
 
     }
@@ -93,7 +91,9 @@ class Logs{
 
     }
 
-
+  /**
+   *
+   */
 
 
 }
