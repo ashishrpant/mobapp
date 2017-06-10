@@ -55,6 +55,7 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
             // assign active class to footer navigation
             var activeNavigationClass = 'rc_footer_active_nav',
                 footerNavigationElem = $('.rc_inner_footer--js');
@@ -87,7 +88,6 @@ class Navigation {
                                 .removeClass(activeNavigationClass);
             footerNavigationElem.find('.contact')
                                 .addClass(activeNavigationClass)
-
 
             $("#load-container").html(response);
         });
@@ -159,5 +159,21 @@ class Navigation {
             $("#load-container").html(response);
         });
     }
+
+    // AddActiveClassOnFooter (addActiveClassElem, isPageClass) {
+    //   // assign active class to footer navigation
+    //   var activeNavigationClass = 'rc_footer_active_nav',
+    //       footerNavigationElem = $('.rc_inner_footer--js');
+    //
+    //   footerNavigationElem.find('.' + activeNavigationClass)
+    //                       .removeClass(activeNavigationClass);
+    //
+    //
+    //   // if page is part of footer navigation add active
+    //   if (isPageClass) {
+    //     footerNavigationElem.find(addActiveClassElem)
+    //                         .addClass(activeNavigationClass);
+    //   }
+    // }
 
 }
