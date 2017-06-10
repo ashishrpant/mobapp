@@ -1,6 +1,7 @@
 .rc--inner_header {
   /*background: #eeeeee;*/
   background: #00b4ff; /* Old browsers */
+  margin-bottom: 0;
   position: fixed;
   top: 0;
   width: 100%;

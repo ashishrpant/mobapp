@@ -1,48 +1,48 @@
 r<div class="page-wrapper">
   <h2 class="page-title">Register</h2>
   <h3 class="page-subtitle">your RF-Coax Account</h3>
-<form id='registerForm'>
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      First Name <i class="fa fa-user-o fa-fw"></i>
-    </span>
-    <input class="form-control" type="text" id='firstName' placeholder="First Name" />
-  </div>
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      Last Name <i class="fa fa-user-o fa-fw"></i>
-    </span>
-    <input class="form-control" type="text" id='lastName' placeholder="Last Name" />
-  </div>
+  <form id='registerForm'>
+    <div class="input-group rc-input_field_container">
+      <span class="input-group-addon">
+        <i class="fa fa-user-o fa-fw"></i>
+      </span>
+      <input class="form-control" type="text" id='firstName' placeholder="First Name" />
+    </div>
+    <div class="input-group rc-input_field_container">
+      <span class="input-group-addon">
+        <i class="fa fa-user-o fa-fw"></i>
+      </span>
+      <input class="form-control" type="text" id='lastName' placeholder="Last Name" />
+    </div>
 
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      Tax Exempt <i class="fa fa-money fa-fw"></i>
-    </span>
-    <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default" value="1">Yes</button>
-    <button type="button" class="btn btn-default" value="0">No</button>
-  </div>
-  </div>
+    <div class="input-group rc-input_field_container">
+      <span class="input-group-addon">
+        Tax Exempt <i class="fa fa-money fa-fw"></i>
+      </span>
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" value="1">Yes</button>
+        <button type="button" class="btn btn-default" value="0">No</button>
+      </div>
+    </div>
 
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      Email address <i class="fa fa-at fa-fw"></i>
-    </span>
-    <input class="form-control" type="text" id='emailAddress' placeholder="Email address" />
-  </div>
+    <div class="input-group rc-input_field_container">
+      <span class="input-group-addon">
+        <i class="fa fa-at fa-fw"></i>
+      </span>
+      <input class="form-control" type="text" id='emailAddress' placeholder="Email address" />
+    </div>
 
-  <div class="input-group rc-input_field_container">
-    <span class="input-group-addon">
-      Password <i class="fa fa-key fa-fw"></i>
-    </span>
-    <input class="form-control" type="password" placeholder="Password" />
-  </div>
+    <div class="input-group rc-input_field_container">
+      <span class="input-group-addon">
+        <i class="fa fa-key fa-fw"></i>
+      </span>
+      <input class="form-control" type="password" placeholder="Password" />
+    </div>
 
-  <span class="input-group-btn rc-input_field_container">
-    <button class="btn btn-primary" onclick="Logs.SignUpOnly()">SIGN UP <i class="fa fa-sign-in fa-fw"></i></button>
-  </span>
-</form>
+    <span class="input-group-btn rc-input_field_container">
+      <button class="btn btn-primary" onclick="Logs.SignUpOnly()">SIGN UP <i class="fa fa-sign-in fa-fw"></i></button>
+    </span>
+  </form>
   <div class="input-group rc-input_field_container">
     <p class="rc-sign_in_title">Already have an accout? Please click below to sign in:</p>
     <a href="javascript:void(0)" class="rc-link rc-login_links" onclick="Navigation.SignInOnly();">Sign In</a>
