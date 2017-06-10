@@ -94,8 +94,7 @@ body.navbar-more-show  {
 }
 
 .rc--inner_footer .navbar-more .navbar-nav > li > a {
-    /*color: rgb(64, 64, 64);*/
-    color: blue;
+    color: rgb(64, 64, 64);
 }
 
 .rc--inner_footer .navbar-more > .navbar-nav > li > a > span.menu-icon {
@@ -107,4 +106,10 @@ body.navbar-more-show  {
     position: relative;
     display: block;
     padding: 12px 10px;
+}
+
+.rc--inner_footer .navbar-nav.mobile-bar > li > a.rc_footer_active_nav {
+  background: #dedede;
+  border-bottom: 5px solid #00b4ff;
+  padding: 12px 10px 0;
 }

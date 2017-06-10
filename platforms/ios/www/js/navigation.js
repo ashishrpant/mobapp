@@ -30,12 +30,22 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
+            // assign active class to footer navigation
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+            footerNavigationElem.find('.search')
+                                .addClass(activeNavigationClass)
+
             $("#load-container").html(response);
         });
     }
 
 
-    OrderWithQuote(){
+    OrderWithQuote() {
         $.ajax({
             type          : "POST",
             url           : localurl+'getQuoteOrder.html',
@@ -45,6 +55,14 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+            // assign active class to footer navigation
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+            footerNavigationElem.find('.quote')
+                                .addClass(activeNavigationClass)
 
             $("#load-container").html(response);
         });
@@ -60,6 +78,17 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
+            // assign active class to footer navigation
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+            footerNavigationElem.find('.contact')
+                                .addClass(activeNavigationClass)
+
+
             $("#load-container").html(response);
         });
     }
@@ -75,6 +104,14 @@ class Navigation {
             $('#navbar').collapse('hide');
             $('#nav_child').show();
 
+
+            // assign active class to footer navigation
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+
             $("#load-container").html(response);
         });
     }
@@ -89,6 +126,14 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+
+
             $("#load-container").html(response);
         });
     }
@@ -103,6 +148,14 @@ class Navigation {
             $("#home").hide();
             $('#navbar').collapse('hide');
             $('#nav_child').show();
+
+            var activeNavigationClass = 'rc_footer_active_nav',
+                footerNavigationElem = $('.rc_inner_footer--js');
+
+            footerNavigationElem.find('.' + activeNavigationClass)
+                                .removeClass(activeNavigationClass);
+
+
             $("#load-container").html(response);
         });
     }
