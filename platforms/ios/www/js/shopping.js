@@ -82,7 +82,7 @@ class Shopping {
 
 
     var main_content = '<div class="page-wrapper">' +
-      '<h2 class="page-title">Your Cart</h2>' +
+      '<div class="page-header"><h4>YOUR CART</h4></div>' +
 
       shopping_cart_head +
       shopping_cart_body +
