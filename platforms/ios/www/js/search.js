@@ -201,7 +201,7 @@ class Search {
     var data = $('#form').serialize().split("&");
     var diameter_cable = $("#submit_frm").attr('diameter_uuid_val');
 
-    console.log(data);
+    //console.log(data);
 
     //console.log(diameter_cable);
 
@@ -216,7 +216,7 @@ class Search {
     }
 
 
-    console.log(obj);
+    //console.log(obj);
 
     var cable_name          = obj.cable_name;
     var connector_1         = obj.connector_1;
@@ -264,164 +264,123 @@ class Search {
         'jacket_type':jacket_type,
         'test_data_val':test_data_val}
     }).done(function(response){
-      //console.log(response);
-      var technical_spec      = '';
-      var PlatForm            = '';
-      var Connector1          = '';
-      var Connector2          = '';
-      var CableSegB           = '';
-      var CableSegC           = '';
-      var Conn1SegB           = '';
-      var Conn2SegB           = '';
-      var JacketSegA          = '';
-      var LengthABet          = '';
-      var LengthSecC          = '';
-      var PhaseSegA           = '';
-      var TestSegA            = '';
-      var DescSegA1           = '';
-      var DescSegB1           = '';
-      var DescFreq1           = '';
-
-      var DescSegA2           = '';
-      var DescSegB2           = '';
-      var DescFreq2           = '';
-
-      var CableDescA          = '';
-      var CableDescB          = '';
-      var CableDescC          = '';
-
-      var LengthDescB         = '';
-      var LengthDescA         = '';
-
-      var DescRotation        = '';
-      var JacketDescA         = '';
-      var TestDescA           = '';
-      var PhaseDescA          = '';
-
-      var ConnDescB1Commas    = '';
-
-      var PriceCap            = '';
-
-      var Description = '';
-
-      switch(diameter_cable){
-        case '0':
-          PlatForm = '086';
-          break;
-        case '1':
-          PlatForm = '047';
-          break;
-        case '2':
-          PlatForm = '141';
-          break;
-      }
-
 
       //
+      console.log(response);
+      var technical_spec='';
       technical_spec = ('<div class="page-header"><h4>TECHNICAL SPECS</h4></div>');
 
-      $.each(response["connector_1"], function(ind, connectorDet1) {
-        Connector1  = connectorDet1['pn_seg_a'];
-        Conn1SegB   = connectorDet1['pn_seg_b'];
-        DescSegA1   = connectorDet1['desc_seg_a'];
-        DescSegB1   = connectorDet1['desc_seg_b'];
-        DescFreq1   = connectorDet1['frequency_range'];
-      });
-      $.each(response["connector_2"], function(ind, connectorDet2) {
-        Connector2  = connectorDet2['pn_seg_a'];
-        Conn2SegB   = connectorDet2['pn_seg_b'];
-        DescSegA2   = connectorDet2['desc_seg_a'];
-        DescSegB2   = connectorDet2['desc_seg_b'];
-        DescFreq2   = connectorDet2['frequency_range'];
-      });
-      $.each(response["cableList"], function(ind, CableDet) {
-        CableSegB   = CableDet['pn_seg_b'];
-        CableSegC   = CableDet['pn_seg_c'];
-        CableDescA  = CableDet['desc_seg_a'];
-        CableDescB  = CableDet['desc_seg_b'];
-        CableDescC  = CableDet['desc_seg_c'];
-      });
 
-      if (DescFreq1 > DescFreq2){
-        ConnDescB1Commas = DescSegB2;
-      } else {
-        ConnDescB1Commas = DescSegB1;
-      }
-      Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'+ ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas;
-
-      $.each(response["jacketList"], function(ind, JacketDet) {
-        JacketSegA   = JacketDet['pn_seg_a'];
-        JacketDescA   = JacketDet['desc_seg_a'];
-
-        Description =  Description +', '+JacketDescA;
-      });
-
-      $.each(response["lengthList"], function(ind, LengthDet) {
-        LengthABet   = LengthDet['pn_seg_a'];
-        LengthSecC   = LengthDet['pn_seg_c'];
-        LengthDescB  = LengthDet['desc_seg_b'];
-      });
-
-      $.each(response["phaseMatchList"], function(ind, PhaseMatchDet) {
-        PhaseSegA   = PhaseMatchDet['pn_seg_a'];
-        PhaseDescA  = PhaseMatchDet['desc_seg_a'];
-
-        Description =  Description +', '+PhaseDescA;
-      });
+      var PartNumber                      = '';
+      var Description                     = '';
+      var PriceCap                        = '';
+      var Overall_End_To_End              = '';
+      var Between_Ref_Planes              = '';
+      var C1_Ref_Plane                    = '';
+      var C2_Ref_Plane                    = '';
+      var Frequency_Range                 = '';
+      var Insertion_Loss                  = '';
+      var Less_Connectors                 = '';
+      var Minimum_Inside_Bend_Radius      = '';
+      var Return_Loss                     = '';
+      var Solder                          = '';
+      var Connector_1                     = '';
+      var Connector_2                      = '';
+      var Cable_Type                      = '';
 
 
+      var rotating_images_1       = response['connector_1'].tech_spec_drawing;
+      var rotating_images_2       = response['connector_2'].rotating_images;
+      PartNumber                  = response['technical_spec'].serial_number;
+      Description                 = response['technical_spec'].description_generator;
+      PriceCap                    = response['technical_spec'].price_breakdown;
 
+      Overall_End_To_End          = response['technical_spec'].Overall_end_to_end;
+      Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
+      C1_Ref_Plane                = response['technical_spec'].C1_Ref_Plane;
+      C2_Ref_Plane                = response['technical_spec'].C2_Ref_Plane;
+      Frequency_Range             = response['technical_spec'].Frequency_Range;
+      Insertion_Loss              = response['technical_spec'].Insertion_Loss;
+      Less_Connectors             = response['technical_spec'].Less_Connectors;
+      Minimum_Inside_Bend_Radius  = response['technical_spec'].Minimum_Inside_Bend_Radius;
+      Return_Loss                 = response['technical_spec'].Return_Loss;
+      Solder                      = response['technical_spec'].Solder;
+      Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
+      Connector_1                 = response['technical_spec'].Connector_1;
+      Connector_2                 = response['technical_spec'].Connector_2;
+      Cable_Type                  = response['technical_spec'].Cable_Type;
 
-      Description = Description+' , '+length_dia+' '+LengthDescB+' , '+CableDescC;
-
-      $.each(response["testData"], function(ind, TestDataDet) {
-        TestSegA   = TestDataDet['pn_seg_a'];
-        TestDescA   = TestDataDet['desc_seg_a'];
-
-        Description = Description + ' ' + TestDescA;
-      });
-
-      $.each(response["discountList"], function(ind, DiscountDet) {
-        PriceCap = PriceCap+', '+DiscountDet['range_discount']+' $'+DiscountDet['discount_percentage'];
-      });
-
-      var PartNumber = '';
-
-
-
-
-
-
-      PartNumber = Connector1+Connector2+PlatForm+Conn1SegB+Conn2SegB+CableSegB+JacketSegA+LengthABet+length_dia+PhaseSegA+CableSegC+TestSegA;
-
-      /* Description = 'RF Cable Assembly, '+DescSegA1+' to '+DescSegA2+DescRotation+' ,'
-       + ' '+CableDescA+' '+CableDescB+' ,'+ConnDescB1Commas+' ,' +
-       ''+JacketDescA+', '+PhaseDescA+', '+length_dia+' '+LengthDescB+' , '+CableDescC+' '+TestDescA;
-       */
-
-
-
-
-      //$description_generator = "RF Cable Assembly, " .
-      // $connector_des_a_1 . " to " . $connector_des_a_2 .
-      // $description_rotation . $cabletype_des_a . " " .
-      // $cabletype_des_b . $connector_des_b_1_commas .
-      // $jacket_des_a . $phase_mat_des_a . " " .
-      // $_SESSION['config']['length_dia'] .
-      // $des_length . " " . $length_des_b .
-      // $cabletype_des_c . $test_des_a;
 
 
 
 
       $('.nav a[href="#search_result_array"]').tab('show');
+      technical_spec = technical_spec+'<img src="https://rfcoax.com/uploads/connectors/drawings/'+rotating_images_1+'" width="50"/><img src="https://rfcoax.com/img/mid_cable.jpg" width="200"/><img src="https://rfcoax.com/uploads/connectors/images/'+rotating_images_2+'" width="50"/>';
+
       technical_spec = technical_spec+'<div><strong>Part Number:</strong> '+PartNumber+'</div>';
       technical_spec = technical_spec+'<div><strong>Description:</strong> '+Description+'</div>';
       technical_spec = technical_spec+'<div><strong>Price:</strong> '+PriceCap+'</div>';
-      technical_spec = technical_spec+'<div><strong>Manufacturing Lead Time:</strong> Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.</div>';
-      technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
-      technical_spec = technical_spec+'<div><strong>NOTE:</strong> All prices are per EACH cable.</div>';
+      technical_spec = technical_spec+'<div><strong>Manufacturing Lead Time:</strong> <br>Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.</div>';
+      technical_spec = technical_spec+'<div><strong>NOTE</strong> : All prices are per <strong>EACH </strong> cable.</div>';
       technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" name="submit_frm" id="submit_frm" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div></form>')
+
+      technical_spec = technical_spec+('<div class="page-header"><h4>PRODUCTION SPECIFICATION</h4></div>');
+
+      technical_spec = technical_spec+'<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">' +
+        '<thead>' +
+        '<tr><td width="50%" height="25" align="left"><strong> Length Dimensions:</strong></td>' +
+
+        '<td width="50%" height="25" align="left"> inch/cm</td>' +
+        '</tr>' +
+        '</thead><tbody>' +
+        '<tr><td width="0" height="25" align="left"><strong> Overall end-to-end:</strong></td>' +
+        '<td width="0" height="25" align="left">'+Overall_End_To_End+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left"><strong>Between Ref. Planes:</strong></td>' +
+        '<td width="0" height="25" align="left">'+Between_Ref_Planes+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left"><strong>Less Connectors:</strong></td>' +
+        '<td width="0" height="25" align="left">'+Less_Connectors+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left"><strong>C1 Ref. Plane (R/P):</strong></td>' +
+        '<td width="0" height="25" align="left">'+C1_Ref_Plane+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left"><strong>C2 Ref. Plane (R/P):</strong></td>' +
+        '<td width="0" height="25" align="left">'+C1_Ref_Plane+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left"><strong>Specifications</strong></td>' +
+        '<td width="0" height="25" align="center"></td>' +
+        '<td width="0" height="25" align="left"></td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Frequency Range:</strong></td>' +
+        '<td width="0" height="25" align="left">'+Frequency_Range+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Return Loss:</strong></td>' +
+        '<td width="0" height="25" align="left">'+Insertion_Loss+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Insertion Loss(up to above frequency limit):</strong></td>' +
+        '<td width="0" height="25" align="left">'+Insertion_Loss+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Connector 1</strong></td>' +
+        '<td width="0" height="25" align="left">'+Connector_1+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Connector 2</strong></td>' +
+        '<td width="0" height="25" align="left">'+Connector_2+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Cable Type</strong></td>' +
+        '<td width="0" height="25" align="left">'+Cable_Type+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Minimum Inside Bend Radius: </strong></td>' +
+        '<td width="0" height="25" align="left">'+Minimum_Inside_Bend_Radius+'</td>' +
+        '</tr>' +
+        '<tr><td width="0" height="25" align="left" valign="top"><strong>Solder</strong></td>' +
+        '<td width="0" height="25" align="left">'+Solder+'</td>' +
+        '</tr>' +
+        '</tbody></table>';
+
+
+
+
 
       $("#search_result_array").html(technical_spec);
 
