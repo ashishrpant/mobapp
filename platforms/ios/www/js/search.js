@@ -311,7 +311,10 @@ class Search {
             Cable_Type                  = response['technical_spec'].Cable_Type;
 
             $('.nav a[href="#search_result_array"]').tab('show');
-            technical_spec = technical_spec+'<img src="https://rfcoax.com/uploads/connectors/drawings/'+rotating_images_1+'" width="50"/><img src="https://rfcoax.com/img/mid_cable.jpg" width="200"/><img src="https://rfcoax.com/uploads/connectors/images/'+rotating_images_2+'" width="50"/>';
+            technical_spec = technical_spec +
+                             '<img src="https://rfcoax.com/uploads/connectors/drawings/'+rotating_images_1+'" width="50"/>'+
+                             '<img src="https://rfcoax.com/img/mid_cable.jpg" width="150"/>'+
+                             '<img src="https://rfcoax.com/uploads/connectors/images/'+rotating_images_2+'" width="50"/>';
 
             technical_spec = technical_spec+'<div><strong>Part Number:</strong> '+PartNumber+'</div>';
             technical_spec = technical_spec+'<div><strong>Description:</strong> '+Description+'</div>';
