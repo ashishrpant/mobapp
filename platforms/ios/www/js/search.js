@@ -274,6 +274,7 @@ class Search {
             var PartNumber                      = '';
             var Description                     = '';
             var PriceCap                        = '';
+            var PricePerUnit                    = '';
             var Overall_End_To_End              = '';
             var Between_Ref_Planes              = '';
             var C1_Ref_Plane                    = '';
@@ -291,9 +292,11 @@ class Search {
 
             var rotating_images_1       = response['connector_1'].tech_spec_drawing;
             var rotating_images_2       = response['connector_2'].rotating_images;
+
             PartNumber                  = response['technical_spec'].serial_number;
             Description                 = response['technical_spec'].description_generator;
             PriceCap                    = response['technical_spec'].price_breakdown;
+            PricePerUnit                = response['technical_spec'].new_price;
 
             Overall_End_To_End          = response['technical_spec'].Overall_end_to_end;
             Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
@@ -318,7 +321,7 @@ class Search {
             technical_spec = technical_spec+'<div><strong>Price:</strong> '+PriceCap+'</div>';
             technical_spec = technical_spec+'<div><strong>Manufacturing Lead Time:</strong> <br>Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.</div>';
             technical_spec = technical_spec+'<div><strong>NOTE</strong> : All prices are per <strong>EACH </strong> cable.</div>';
-            technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" name="submit_frm" id="submit_frm" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div></form>')
+            technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" partNumber="'+PartNumber+'" pricePerUnit="'+PricePerUnit+'" name="addToCart" id="addToCart" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div></form>');
 
             technical_spec = technical_spec+('<div class="page-header"><h4>PRODUCTION SPECIFICATION</h4></div>');
 
