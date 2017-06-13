@@ -96,4 +96,21 @@ class Shopping {
     $('#nav_child').show();
     $("#load-container").html(main_content);
   }
+
+  AddCart(){
+
+      var PartNumber      = "";
+      var PricePerUnit    = "";
+      var ImageCon1       = "":
+      var ImageCon2       = "":
+
+
+
+      PartNumber          = $("#addToCart").attr("PartNumber");
+      PricePerUnit        = $("#addToCart").attr("PricePerUnit");
+
+      console.log(PartNumber);
+      console.log(PricePerUnit);
+
+  }
 }
