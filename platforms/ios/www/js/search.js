@@ -268,7 +268,7 @@ class Search {
             //
             console.log(response);
             var technical_spec='';
-            technical_spec = ('<div class="page-header"><h4>TECHNICAL SPECS</h4></div>');
+            technical_spec = ('<h4 class="search--title">Technical Specs</h4>');
 
 
             var PartNumber                      = '';
@@ -347,7 +347,7 @@ class Search {
             technical_spec = technical_spec +
                 '<h4 class="search--title"> Production Specification</h4>' +
                 '<ul class="list-group">' +
-                '<li class="list-group-item"><span class="badge primary">in/cm</span>Length Dimensions</li>' +
+                '<li class="list-group-item"><span class="badge primary">in/cm</span>Length Dimensions: </li>' +
                 '<li class="list-group-item"><span class="badge primary">' + Overall_End_To_End+'</span>Overall end-to-end:</li>' +
                 '<li class="list-group-item"><span class="badge primary">' + Between_Ref_Planes+'</span>Between Ref. Planes:</li>' +
                 '<li class="list-group-item"><span class="badge primary">' + Less_Connectors+'</span>Less Connectors:</li>' +
