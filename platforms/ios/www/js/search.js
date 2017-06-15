@@ -226,7 +226,7 @@ class Search {
         var phase_mat           = obj.phase_mat;
         var lengthList          = obj.lengthList;
         var test_data_val       = obj.test_data_val;
-        var jacket_type        = obj.jacket_type;
+        var jacket_type         = obj.jacket_type;
 
         if(diameter_cable==0){
             var checked                 = 'checked';
@@ -271,47 +271,64 @@ class Search {
             technical_spec = ('<h4 class="search--title">Technical Specs</h4>');
 
 
-            var PartNumber                      = '';
-            var Description                     = '';
-            var PriceCap                        = '';
-            var PricePerUnit                    = '';
-            var Overall_End_To_End              = '';
-            var Between_Ref_Planes              = '';
-            var C1_Ref_Plane                    = '';
-            var C2_Ref_Plane                    = '';
-            var Frequency_Range                 = '';
-            var Insertion_Loss                  = '';
-            var Less_Connectors                 = '';
-            var Minimum_Inside_Bend_Radius      = '';
-            var Return_Loss                     = '';
-            var Solder                          = '';
-            var Connector_1                     = '';
-            var Connector_2                      = '';
-            var Cable_Type                      = '';
+          var PartNumber                      = '';
+          var Description                     = '';
+          var PriceCap                        = '';
+          var PricePerUnit                    = '';
+          var Overall_End_To_End              = '';
+          var Between_Ref_Planes              = '';
+          var C1_Ref_Plane                    = '';
+          var C2_Ref_Plane                    = '';
+          var Frequency_Range                 = '';
+          var Insertion_Loss                  = '';
+          var Less_Connectors                 = '';
+          var Minimum_Inside_Bend_Radius      = '';
+          var Return_Loss                     = '';
+          var Solder                          = '';
+          var Connector_1                     = '';
+          var Connector_2                     = '';
+          var Cable_Type                      = '';
+          var Calc_2                          = '';
+          var Calc_3                          = '';
+          var Calc_4                          = '';
+          var Calc_5                          = '';
+          var Calc_6                          = '';
+          var Calc_7                          = '';
+          var Calc_8                          = '';
+          var Con1_segD                       = '';
+          var Con2_segD                       = '';
+          var CableType_segE                  = '';
 
 
-            var rotating_images_1       = response['connector_1'].tech_spec_drawing;
-            var rotating_images_2       = response['connector_2'].rotating_images;
+          var rotating_images_1       = response['connector_1'].tech_spec_drawing;
+          var rotating_images_2       = response['connector_2'].rotating_images;
 
-            PartNumber                  = response['technical_spec'].serial_number;
-            Description                 = response['technical_spec'].description_generator;
-            PriceCap                    = response['technical_spec'].price_breakdown;
-            PricePerUnit                = response['technical_spec'].new_price;
+          PartNumber                  = response['technical_spec'].serial_number;
+          Description                 = response['technical_spec'].description_generator;
+          PriceCap                    = response['technical_spec'].price_breakdown;
+          PricePerUnit                = response['technical_spec'].new_price;
 
-            Overall_End_To_End          = response['technical_spec'].Overall_end_to_end;
-            Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
-            C1_Ref_Plane                = response['technical_spec'].C1_Ref_Plane;
-            C2_Ref_Plane                = response['technical_spec'].C2_Ref_Plane;
-            Frequency_Range             = response['technical_spec'].Frequency_Range;
-            Insertion_Loss              = response['technical_spec'].Insertion_Loss;
-            Less_Connectors             = response['technical_spec'].Less_Connectors;
-            Minimum_Inside_Bend_Radius  = response['technical_spec'].Minimum_Inside_Bend_Radius;
-            Return_Loss                 = response['technical_spec'].Return_Loss;
-            Solder                      = response['technical_spec'].Solder;
-            Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
-            Connector_1                 = response['technical_spec'].Connector_1;
-            Connector_2                 = response['technical_spec'].Connector_2;
-            Cable_Type                  = response['technical_spec'].Cable_Type;
+          Overall_End_To_End          = response['technical_spec'].Overall_end_to_end;
+          Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
+          C1_Ref_Plane                = response['technical_spec'].C1_Ref_Plane;
+          C2_Ref_Plane                = response['technical_spec'].C2_Ref_Plane;
+          Frequency_Range             = response['technical_spec'].Frequency_Range;
+          Insertion_Loss              = response['technical_spec'].Insertion_Loss;
+          Less_Connectors             = response['technical_spec'].Less_Connectors;
+          Minimum_Inside_Bend_Radius  = response['technical_spec'].Minimum_Inside_Bend_Radius;
+          Return_Loss                 = response['technical_spec'].Return_Loss;
+          Solder                      = response['technical_spec'].Solder;
+          Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
+          Connector_1                 = response['technical_spec'].Connector_1;
+          Connector_2                 = response['technical_spec'].Connector_2;
+          Cable_Type                  = response['technical_spec'].Cable_Type;
+          Calc_2                      = response['technical_spec'].Calc_2;
+          Calc_3                      = response['technical_spec'].Calc_3;
+          Calc_4                      = response['technical_spec'].Calc_4;
+          Calc_5                      = response['technical_spec'].Calc_5;
+          Calc_6                      = response['technical_spec'].Calc_6;
+          Calc_7                      = response['technical_spec'].Calc_7;
+          Calc_8                      = response['technical_spec'].Calc_8;
 
             $('.nav a[href="#search_result_array"]').tab('show');
             technical_spec = technical_spec +
@@ -336,11 +353,8 @@ class Search {
                             '</ul>' +
                             '<div class="alert alert-info" role="alert">' +
                                 '<strong>NOTE:</strong> : All prices are per <strong>EACH</strong> cable.' +
-                            '</div>' +
-                            '<div class="btn-group" role="group">' +
-                              '<input type="button" onclick="Shopping.AddCart();" partNumber = "' + PartNumber + '" pricePerUnit = "' + PricePerUnit + '" name = "addToCart" id = "addToCart" value="Add to cart" class="btn btn-primary" />' +
-                              '<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" />' +
-                            '</div>';
+                            '</div>' ;
+                              technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" LengthDia="'+length_dia+'" JacketVal="'+jacket_type+'" TestDataVal="'+test_data_val+'" PriceCap="'+PriceCap+'" Description="'+Description+'" Calc_8="'+Calc_8+'"  Calc_7="'+Calc_7+'" Calc_6="'+Calc_6+'" Calc_5="'+Calc_5+'" Calc_4="'+Calc_4+'"  Calc_3="'+Calc_3+'" Calc_2="'+Calc_2+'" Image_Con_2="'+rotating_images_2+'" Image_Con_1="'+rotating_images_1+'" C1_Ref_Plane="'+C1_Ref_Plane+'" C2_Ref_Plane="'+C2_Ref_Plane+'" Frequency_Range="'+Frequency_Range+'" Insertion_Loss="'+Insertion_Loss+'" Less_Connectors="'+Less_Connectors+'" Minimum_Inside_Bend_Radius="'+Minimum_Inside_Bend_Radius+'" Return_Loss="'+Return_Loss+'" Solder="'+Solder+'"  Between_Ref_Planes="'+Between_Ref_Planes+'" Cable_Type="'+Cable_Type+'" Overall_End_To_End="'+Overall_End_To_End+'" partNumber="'+PartNumber+'" Connector_1="'+Connector_1+'" Connector_2="'+Connector_2+'" pricePerUnit="'+PricePerUnit+'" name="addToCart" id="addToCart" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div>');
 
 
 
@@ -386,8 +400,29 @@ class Search {
             var form_param = '';
             form_param = ('<div class="page-header"><h4>DESIGN YOUR CABLE</h4></div>');
 
-            form_param = form_param+('<form id="form"><div class="form-group"><label for="diameter_cable">Diameter</label></div><div class="form-group"><div class="btn-group" data-toggle="buttons"><label class="btn btn-default btn-md"><input type="radio" ' +  checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">086</label><label class="btn btn-default btn-md"><input type="radio" ' +  checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>047</label><label class="btn btn-default btn-md"><input type="radio" ' +  checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>141</label></div></div>');
+          var form_param = '';
+          form_param = ('<div class="page-header"><h4>DESIGN YOUR CABLE</h4></div>');
 
+          form_param = form_param+('<form id="form">'+
+            '<div class="form-group">'+
+            '<label for="diameter_cable" class="search--normal_label">Diameter</label>'+
+            '<div class="btn-group clearfix" data-toggle="buttons">'+
+            '<label class="btn btn-default btn-md active">'+
+            '<input type="radio" '+ checked +' name="diameter_cable" id="diameter_cable" required="" diameter_uuid_val="0" value="0" onclick="SearchAPI.LoadFormList(0);">'+
+            '086'+
+            '</label>'+
+
+            '<label class="btn btn-default btn-md">'+
+            '<input type="radio" '+ checked1 +' diameter_uuid_val="1" name="diameter_cable" id="diameter_cable" required="" value="1" onclick="SearchAPI.LoadFormList(1)";>'+
+            '047'+
+            '</label>'+
+
+            '<label class="btn btn-default btn-md">'+
+            '<input type="radio" '+ checked2 +' diameter_uuid_val="2" name="diameter_cable" id="diameter_cable" required="" value="2" onclick="SearchAPI.LoadFormList(2)";>'+
+            '141'+
+            '</label>'+
+            '</div>'+
+            '</div>');
             $.each(response["connectorList"], function(ind, connectorList) {
                 //console.log(connectorList);
                 if(connectorList.id==connector_1){

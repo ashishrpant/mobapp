@@ -99,18 +99,101 @@ class Shopping {
 
   AddCart(){
 
-      var PartNumber      = "";
-      var PricePerUnit    = "";
-      var ImageCon1       = "":
-      var ImageCon2       = "":
+    var PricePerUnit                    = "";
+    var PartNumber                      = '';
+    var Description                     = '';
+    var PriceCap                        = '';
+    var Overall_End_To_End              = '';
+    var Between_Ref_Planes              = '';
+    var C1_Ref_Plane                    = '';
+    var C2_Ref_Plane                    = '';
+    var Frequency_Range                 = '';
+    var Insertion_Loss                  = '';
+    var Less_Connectors                 = '';
+    var Minimum_Inside_Bend_Radius      = '';
+    var Return_Loss                     = '';
+    var Solder                          = '';
+    var Connector_1                     = '';
+    var Connector_2                     = '';
+    var Calc_2                          = '';
+    var Calc_3                          = '';
+    var Calc_4                          = '';
+    var Calc_5                          = '';
+    var Calc_6                          = '';
+    var Calc_7                          = '';
+    var Calc_8                          = '';
+    var LengthDia                       = '';
+    var JacketVal                       = '';
+    var TestDataVal                     = "";
 
+    PartNumber                          = $("#addToCart").attr("PartNumber");
+    PricePerUnit                        = $("#addToCart").attr("PricePerUnit");
+    Description                         = $("#addToCart").attr("Description");
+    PriceCap                            = $("#addToCart").attr("PriceCap");
+    Overall_End_To_End                  = $("#addToCart").attr("Overall_End_To_End");
+    Between_Ref_Planes                  = $("#addToCart").attr("Between_Ref_Planes");
+    C1_Ref_Plane                        = $("#addToCart").attr("C1_Ref_Plane");
+    C2_Ref_Plane                        = $("#addToCart").attr("C2_Ref_Plane");
+    Frequency_Range                     = $("#addToCart").attr("Frequency_Range");
+    Insertion_Loss                      = $("#addToCart").attr("Insertion_Loss");
+    Less_Connectors                     = $("#addToCart").attr("Less_Connectors");
+    Minimum_Inside_Bend_Radius          = $("#addToCart").attr("Minimum_Inside_Bend_Radius");
+    Return_Loss                         = $("#addToCart").attr("Return_Loss");
+    Solder                              = $("#addToCart").attr("Solder");
+    Connector_1                         = $("#addToCart").attr("Connector_1");
+    Connector_2                         = $("#addToCart").attr("Connector_2");
+    Calc_2                              = $("#addToCart").attr("Calc_2");
+    Calc_3                              = $("#addToCart").attr("Calc_3");
+    Calc_4                              = $("#addToCart").attr("Calc_4");
+    Calc_5                              = $("#addToCart").attr("Calc_5");
+    Calc_6                              = $("#addToCart").attr("Calc_6");
+    Calc_7                              = $("#addToCart").attr("Calc_7");
+    Calc_8                              = $("#addToCart").attr("Calc_8");
+    LengthDia                           = $("#addToCart").attr("LengthDia");
+    JacketVal                           = $("#addToCart").attr("JacketVal");
+    TestDataVal                         = $("#addToCart").attr("TestDataVal");
 
+    var ParamsSendingToCartPage = "";
+    ParamsSendingToCartPage     = {
+      "PartNumber":PartNumber,
+      "PricePerUnit":PricePerUnit,
+      "Description":Description,
+      "PriceCap":PriceCap,
+      "Overall_End_To_End":Overall_End_To_End,
+      "Between_Ref_Planes":Between_Ref_Planes,
+      "C1_Ref_Plane":C1_Ref_Plane,
+      "C2_Ref_Plane":C2_Ref_Plane,
+      "Frequency_Range":Frequency_Range,
+      "Insertion_Loss":Insertion_Loss,
+      "Less_Connectors":Less_Connectors,
+      "PartMinimum_Inside_Bend_RadiusNumber":Minimum_Inside_Bend_Radius,
+      "Return_Loss":Return_Loss,
+      "Solder":Solder,
+      "Connector_1":Connector_1,
+      "Connector_2":Connector_2,
+      "Calc_2":Calc_2,
+      "Calc_3":Calc_3,
+      "Calc_4":Calc_4,
+      "Calc_5":Calc_5,
+      "Calc_5":Calc_5,
+      "Calc_5":Calc_5,
+      "Calc_6":Calc_6,
+      "Calc_7":Calc_7,
+      "Calc_8":Calc_8,
+      "LengthDia":LengthDia,
+      "JacketVal":JacketVal,
+      "TestDataVal":TestDataVal,
+    };
 
-      PartNumber          = $("#addToCart").attr("PartNumber");
-      PricePerUnit        = $("#addToCart").attr("PricePerUnit");
+    $.ajax({
+      type          : "POST",
+      url           : url+'addToCart.php',
+      contentType   : "application/x-www-form-urlencoded;",
+      data          : ParamsSendingToCartPage
 
-      console.log(PartNumber);
-      console.log(PricePerUnit);
+    }).done(function(response) {
+      console.log(response);
+    });
 
   }
 }
