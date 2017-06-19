@@ -16,10 +16,10 @@ class Shopping {
     //
     // });
 
-    var response = '{"success":true,"cart_items":' +
-      '[{"id":"14809","serial_number":"S086MMHF-12","order_quantity":"1","price_per_unit":"38","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 20:56:48","price_breakdown":" 1-9 $38.00, 10-24 $36.10, 25-49 $34.20, 50-99 $32.30, 100-249 $30.40, 250-499 $28.50, 500+ $26.60 USD each","valid_usa":"0"' +
+    var response = '{"success" : true,"cart_items" : ' +
+      '[{"id" : "14809","serial_number" : "S086MMHF-12","order_quantity" : "1","price_per_unit" : "38","user_id" : "0","session_id" : "362727890cfc59f5de51d2d99233fb67","date_added" : "05/24/2017 20:56:48","price_breakdown" : " 1-9 $38.00, 10-24 $36.10, 25-49 $34.20, 50-99 $32.30, 100-249 $30.40, 250-499 $28.50, 500+ $26.60 USD each","valid_usa" : "0"' +
       '},' +
-      '{"id":"14810","serial_number":"V086FFHF-12","order_quantity":"1","price_per_unit":"196","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 21:25:11","price_breakdown":" 1-9 $196.00, 10-24 $186.20, 25-49 $176.40, 50-99 $166.60, 100-249 $156.80, 250-499 $147.00, 500+ $137.20 USD each","valid_usa":"0"}' +
+      '{"id" : "14810","serial_number" : "V086FFHF-12","order_quantity" : "1","price_per_unit" : "196","user_id" : "0","session_id" : "362727890cfc59f5de51d2d99233fb67","date_added" : "05/24/2017 21:25:11","price_breakdown" : " 1-9 $196.00, 10-24 $186.20, 25-49 $176.40, 50-99 $166.60, 100-249 $156.80, 250-499 $147.00, 500+ $137.20 USD each","valid_usa" : "0"}' +
       ']' +
       '}';
 
@@ -133,75 +133,74 @@ class Shopping {
     var CableType                       = "";
     var PhaseMatch                      = "";
 
-    CableType                           = $("#addToCart").attr("CableType");
-    PartNumber                          = $("#addToCart").attr("PartNumber");
-    PricePerUnit                        = $("#addToCart").attr("PricePerUnit");
-    Description                         = $("#addToCart").attr("Description");
-    PriceCap                            = $("#addToCart").attr("PriceCap");
-    Overall_End_To_End                  = $("#addToCart").attr("Overall_End_To_End");
-    Between_Ref_Planes                  = $("#addToCart").attr("Between_Ref_Planes");
-    C1_Ref_Plane                        = $("#addToCart").attr("C1_Ref_Plane");
-    C2_Ref_Plane                        = $("#addToCart").attr("C2_Ref_Plane");
-    Frequency_Range                     = $("#addToCart").attr("Frequency_Range");
-    Insertion_Loss                      = $("#addToCart").attr("Insertion_Loss");
-    Less_Connectors                     = $("#addToCart").attr("Less_Connectors");
-    Minimum_Inside_Bend_Radius          = $("#addToCart").attr("Minimum_Inside_Bend_Radius");
-    Return_Loss                         = $("#addToCart").attr("Return_Loss");
-    Solder                              = $("#addToCart").attr("Solder");
-    Connector_Desc_1                    = $("#addToCart").attr("Connector_Desc_1");
-    Connector_Desc_2                    = $("#addToCart").attr("Connector_Desc_2");
-    Calc_2                              = $("#addToCart").attr("Calc_2");
-    Calc_3                              = $("#addToCart").attr("Calc_3");
-    Calc_4                              = $("#addToCart").attr("Calc_4");
-    Calc_5                              = $("#addToCart").attr("Calc_5");
-    Calc_6                              = $("#addToCart").attr("Calc_6");
-    Calc_7                              = $("#addToCart").attr("Calc_7");
-    Calc_8                              = $("#addToCart").attr("Calc_8");
-    LengthDia                           = $("#addToCart").attr("LengthDia");
-    JacketVal                           = $("#addToCart").attr("JacketVal");
-    TestDataVal                         = $("#addToCart").attr("TestDataVal");
-    RotatingImages1                     = $("#addToCart").attr("rotating_images_1");
-    RotatingImages2                     = $("#addToCart").attr("rotating_images_2");
-    PhaseMatch                          = $("#addToCart").attr("PhaseMatch");
+    var addToCartButton = $('#addToCart')
 
+    CableType                           = addToCartButton.attr("CableType");
+    PartNumber                          = addToCartButton.attr("PartNumber");
+    PricePerUnit                        = addToCartButton.attr("PricePerUnit");
+    Description                         = addToCartButton.attr("Description");
+    PriceCap                            = addToCartButton.attr("PriceCap");
+    Overall_End_To_End                  = addToCartButton.attr("Overall_End_To_End");
+    Between_Ref_Planes                  = addToCartButton.attr("Between_Ref_Planes");
+    C1_Ref_Plane                        = addToCartButton.attr("C1_Ref_Plane");
+    C2_Ref_Plane                        = addToCartButton.attr("C2_Ref_Plane");
+    Frequency_Range                     = addToCartButton.attr("Frequency_Range");
+    Insertion_Loss                      = addToCartButton.attr("Insertion_Loss");
+    Less_Connectors                     = addToCartButton.attr("Less_Connectors");
+    Minimum_Inside_Bend_Radius          = addToCartButton.attr("Minimum_Inside_Bend_Radius");
+    Return_Loss                         = addToCartButton.attr("Return_Loss");
+    Solder                              = addToCartButton.attr("Solder");
+    Connector_Desc_1                    = addToCartButton.attr("Connector_Desc_1");
+    Connector_Desc_2                    = addToCartButton.attr("Connector_Desc_2");
+    Calc_2                              = addToCartButton.attr("Calc_2");
+    Calc_3                              = addToCartButton.attr("Calc_3");
+    Calc_4                              = addToCartButton.attr("Calc_4");
+    Calc_5                              = addToCartButton.attr("Calc_5");
+    Calc_6                              = addToCartButton.attr("Calc_6");
+    Calc_7                              = addToCartButton.attr("Calc_7");
+    Calc_8                              = addToCartButton.attr("Calc_8");
+    LengthDia                           = addToCartButton.attr("LengthDia");
+    JacketVal                           = addToCartButton.attr("JacketVal");
+    TestDataVal                         = addToCartButton.attr("TestDataVal");
+    RotatingImages1                     = addToCartButton.attr("rotating_images_1");
+    RotatingImages2                     = addToCartButton.attr("rotating_images_2");
+    PhaseMatch                          = addToCartButton.attr("PhaseMatch");
 
-
-    var ParamsSendingToCartPage = "";
-    ParamsSendingToCartPage     = {
-      "PartNumber":PartNumber,
-      "PricePerUnit":PricePerUnit,
-      "Description":Description,
-      "PriceCap":PriceCap,
-      "Overall_End_To_End":Overall_End_To_End,
-      "Between_Ref_Planes":Between_Ref_Planes,
-      "C1_Ref_Plane":C1_Ref_Plane,
-      "C2_Ref_Plane":C2_Ref_Plane,
-      "Frequency_Range":Frequency_Range,
-      "Insertion_Loss":Insertion_Loss,
-      "Less_Connectors":Less_Connectors,
-      "Minimum_Inside_Bend_Radius":Minimum_Inside_Bend_Radius,
-      "Return_Loss":Return_Loss,
-      "Solder":Solder,
-      "Connector_1":Connector_1,
-      "Connector_2":Connector_2,
-      "Connector_Desc_1":Connector_Desc_1,
-      "Connector_Desc_2":Connector_Desc_2,
-      "Calc_2":Calc_2,
-      "Calc_3":Calc_3,
-      "Calc_4":Calc_4,
-      "Calc_5":Calc_5,
-      "Calc_5":Calc_5,
-      "Calc_5":Calc_5,
-      "Calc_6":Calc_6,
-      "Calc_7":Calc_7,
-      "Calc_8":Calc_8,
-      "LengthDia":LengthDia,
-      "JacketVal":JacketVal,
-      "TestDataVal":TestDataVal,
-      "RotatingImages1":RotatingImages1,
-      "RotatingImages2":RotatingImages2,
-      "CableType":CableType,
-      "PhaseMatch":PhaseMatch
+    var ParamsSendingToCartPage = {
+      "PartNumber" : PartNumber,
+      "PricePerUnit" : PricePerUnit,
+      "Description" : Description,
+      "PriceCap" : PriceCap,
+      "Overall_End_To_End" : Overall_End_To_End,
+      "Between_Ref_Planes" : Between_Ref_Planes,
+      "C1_Ref_Plane" : C1_Ref_Plane,
+      "C2_Ref_Plane" : C2_Ref_Plane,
+      "Frequency_Range" : Frequency_Range,
+      "Insertion_Loss" : Insertion_Loss,
+      "Less_Connectors" : Less_Connectors,
+      "Minimum_Inside_Bend_Radius" : Minimum_Inside_Bend_Radius,
+      "Return_Loss" : Return_Loss,
+      "Solder" : Solder,
+      "Connector_1" : Connector_1,
+      "Connector_2" : Connector_2,
+      "Connector_Desc_1" : Connector_Desc_1,
+      "Connector_Desc_2" : Connector_Desc_2,
+      "Calc_2" : Calc_2,
+      "Calc_3" : Calc_3,
+      "Calc_4" : Calc_4,
+      "Calc_5" : Calc_5,
+      "Calc_5" : Calc_5,
+      "Calc_5" : Calc_5,
+      "Calc_6" : Calc_6,
+      "Calc_7" : Calc_7,
+      "Calc_8" : Calc_8,
+      "LengthDia" : LengthDia,
+      "JacketVal" : JacketVal,
+      "TestDataVal" : TestDataVal,
+      "RotatingImages1" : RotatingImages1,
+      "RotatingImages2" : RotatingImages2,
+      "CableType" : CableType,
+      "PhaseMatch" : PhaseMatch
     };
 
     $.ajax({
@@ -209,22 +208,24 @@ class Shopping {
       url           : url+'addToCart.php',
       contentType   : "application/x-www-form-urlencoded;",
       data          : ParamsSendingToCartPage
-
     }).done(function(response) {
 
       response = (JSON.parse(response));
+
+      var showMessageElem = $('#show_msg');
+
       if(response['success']==true){
-        $("#show_msg").addClass('alert alert-success');
+        showMessageElem.addClass('alert alert-success');
         var Shop = new Shopping();
         Shop.GetCartCount();
-      }else{
-          $("#show_msg").addClass('alert alert-danger');
+      } else {
+          showMessageElem.addClass('alert alert-danger');
       }
-      $("#show_msg").show();
-      $("#show_msg").html(response.message);
+      showMessageElem.show();
+      showMessageElem.find('.alert_message--js').html(response.message);
 
       setTimeout(function() {
-        $("#show_msg").fadeOut('fast');
+        showMessageElem.fadeOut('fast');
       }, 5000)
     });
 
