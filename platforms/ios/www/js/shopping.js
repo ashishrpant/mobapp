@@ -5,6 +5,7 @@
 
 class Shopping {
 
+
   ViewCart() {
     // $.ajax({
     //     type          : "POST",
@@ -163,6 +164,8 @@ class Shopping {
     RotatingImages2                     = $("#addToCart").attr("rotating_images_2");
     PhaseMatch                          = $("#addToCart").attr("PhaseMatch");
 
+
+
     var ParamsSendingToCartPage = "";
     ParamsSendingToCartPage     = {
       "PartNumber":PartNumber,
@@ -208,8 +211,36 @@ class Shopping {
       data          : ParamsSendingToCartPage
 
     }).done(function(response) {
-      console.log(response);
+
+      response = (JSON.parse(response));
+      if(response['success']==true){
+        $("#show_msg").addClass('alert alert-success');
+        var Shop = new Shopping();
+        Shop.GetCartCount();
+      }else{
+          $("#show_msg").addClass('alert alert-danger');
+      }
+      $("#show_msg").show();
+      $("#show_msg").html(response.message);
+
+      setTimeout(function() {
+        $("#show_msg").fadeOut('fast');
+      }, 5000)
     });
 
+  }
+
+  GetCartCount(){
+    $.ajax({
+        type          : "POST",
+        url           : url+'loadCart.php',
+        contentType   : "application/x-www-form-urlencoded;",
+        data          : {GetCount:1}
+    }).done(function(response) {
+      console.log(response);
+      response = (JSON.parse(response));
+      $("#cart_cnt").html(response.cart_items);
+
+    });
   }
 }
