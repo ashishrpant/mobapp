@@ -57,6 +57,62 @@ class Dashboard {
 
     });
   }
+  SignInOnly(){
+    $.ajax({
+        type          : "POST",
+        url           : localurl+'getLogin.html',
+        contentType   : "application/x-www-form-urlencoded;"
+    }).done(function(response) {
+        $("#inner").show().addClass('rc--inner_header');
+        $("#home").hide();
+        $('#navbar').collapse('hide');
+        $('#nav_child').show();
+
+
+        // assign active class to footer navigation
+        var activeNavigationClass = 'rc_footer_active_nav',
+            footerNavigationElem = $('.rc_inner_footer--js');
+
+        footerNavigationElem.find('.' + activeNavigationClass)
+                            .removeClass(activeNavigationClass);
+
+        $("#load-container").html(response);
+        $("#GoToUrl").attr("GoBackUrl", "Cart");
+    });
+  }
+  GetReferenceName(){
+    $.ajax({
+      type          : "POST",
+      url           : localurl+'getReferenceName.html',
+      contentType   : "application/x-www-form-urlencoded;"
+    }).done(function(response) {
+      $("#inner").show();
+      $("#home").hide();
+      $('#navbar').collapse('hide');
+      $('#nav_child').show();
+
+      $("#load-container").html(response);
+
+    });
+  }
+  GetShippingAddress(){
+    $.ajax({
+      type          : "POST",
+      url           : url+'loadShippingAddress.php',
+      contentType   : "application/x-www-form-urlencoded;"
+    }).done(function(response) {
+      $("#inner").show();
+      $("#home").hide();
+      $('#navbar').collapse('hide');
+      $('#nav_child').show();
+
+        var form_param = '';
+        form_param = ('<div class="page-header"><h4>SHIPPING DETAILS</h4></div>');
+        form_param = form_param+'<p class="text-muted"><i>Please choose or select the address you want to use.</i></p>';
+      $("#load-container").html(form_param);
+
+    });
+  }
 
 
 }
