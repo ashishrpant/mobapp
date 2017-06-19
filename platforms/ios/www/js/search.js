@@ -287,7 +287,7 @@ class Search {
           var Solder                          = '';
           var Connector_1                     = '';
           var Connector_2                     = '';
-          var Cable_Type                      = '';
+          var CableType                       = '';
           var Calc_2                          = '';
           var Calc_3                          = '';
           var Calc_4                          = '';
@@ -321,7 +321,7 @@ class Search {
           Between_Ref_Planes          = response['technical_spec'].Between_Ref_Planes;
           Connector_1                 = response['technical_spec'].Connector_1;
           Connector_2                 = response['technical_spec'].Connector_2;
-          Cable_Type                  = response['technical_spec'].Cable_Type;
+          CableType                   = response['technical_spec'].Cable_Type;
           Calc_2                      = response['technical_spec'].Calc_2;
           Calc_3                      = response['technical_spec'].Calc_3;
           Calc_4                      = response['technical_spec'].Calc_4;
@@ -354,7 +354,7 @@ class Search {
                             '<div class="alert alert-info" role="alert">' +
                                 '<strong>NOTE:</strong> : All prices are per <strong>EACH</strong> cable.' +
                             '</div>' ;
-                              technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" LengthDia="'+length_dia+'" JacketVal="'+jacket_type+'" TestDataVal="'+test_data_val+'" PriceCap="'+PriceCap+'" Description="'+Description+'" Calc_8="'+Calc_8+'"  Calc_7="'+Calc_7+'" Calc_6="'+Calc_6+'" Calc_5="'+Calc_5+'" Calc_4="'+Calc_4+'"  Calc_3="'+Calc_3+'" Calc_2="'+Calc_2+'" Image_Con_2="'+rotating_images_2+'" Image_Con_1="'+rotating_images_1+'" C1_Ref_Plane="'+C1_Ref_Plane+'" C2_Ref_Plane="'+C2_Ref_Plane+'" Frequency_Range="'+Frequency_Range+'" Insertion_Loss="'+Insertion_Loss+'" Less_Connectors="'+Less_Connectors+'" Minimum_Inside_Bend_Radius="'+Minimum_Inside_Bend_Radius+'" Return_Loss="'+Return_Loss+'" Solder="'+Solder+'"  Between_Ref_Planes="'+Between_Ref_Planes+'" Cable_Type="'+Cable_Type+'" Overall_End_To_End="'+Overall_End_To_End+'" partNumber="'+PartNumber+'" Connector_1="'+Connector_1+'" Connector_2="'+Connector_2+'" pricePerUnit="'+PricePerUnit+'" name="addToCart" id="addToCart" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div>');
+                              technical_spec = technical_spec+('<div class="form-group"><input type="button" onclick="Shopping.AddCart();" PhaseMatch="'+phase_mat+'" rotating_images_2="'+rotating_images_2+'" rotating_images_1="'+rotating_images_1+'" LengthDia="'+length_dia+'" JacketVal="'+jacket_type+'" TestDataVal="'+test_data_val+'" PriceCap="'+PriceCap+'" Description="'+Description+'" Calc_8="'+Calc_8+'"  Calc_7="'+Calc_7+'" Calc_6="'+Calc_6+'" Calc_5="'+Calc_5+'" Calc_4="'+Calc_4+'"  Calc_3="'+Calc_3+'" Calc_2="'+Calc_2+'" Image_Con_2="'+rotating_images_2+'" Image_Con_1="'+rotating_images_1+'" C1_Ref_Plane="'+C1_Ref_Plane+'" C2_Ref_Plane="'+C2_Ref_Plane+'" Frequency_Range="'+Frequency_Range+'" Insertion_Loss="'+Insertion_Loss+'" Less_Connectors="'+Less_Connectors+'" Minimum_Inside_Bend_Radius="'+Minimum_Inside_Bend_Radius+'" Return_Loss="'+Return_Loss+'" Solder="'+Solder+'"  Between_Ref_Planes="'+Between_Ref_Planes+'" CableType="'+CableType+'" Overall_End_To_End="'+Overall_End_To_End+'" partNumber="'+PartNumber+'" Connector_Desc_1="'+Connector_Desc_1+'" Connector_Desc_2="'+Connector_Desc_2+'" pricePerUnit="'+PricePerUnit+'" name="addToCart" id="addToCart" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div>');
 
 
 

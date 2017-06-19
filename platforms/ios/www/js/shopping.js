@@ -125,7 +125,14 @@ class Shopping {
     var LengthDia                       = '';
     var JacketVal                       = '';
     var TestDataVal                     = "";
+    var RotatingImages1                 = "";
+    var RotatingImages2                 = "";
+    var Connector_Desc_1                = "";
+    var Connector_Desc_2                = "";
+    var CableType                       = "";
+    var PhaseMatch                      = "";
 
+    CableType                           = $("#addToCart").attr("CableType");
     PartNumber                          = $("#addToCart").attr("PartNumber");
     PricePerUnit                        = $("#addToCart").attr("PricePerUnit");
     Description                         = $("#addToCart").attr("Description");
@@ -140,8 +147,8 @@ class Shopping {
     Minimum_Inside_Bend_Radius          = $("#addToCart").attr("Minimum_Inside_Bend_Radius");
     Return_Loss                         = $("#addToCart").attr("Return_Loss");
     Solder                              = $("#addToCart").attr("Solder");
-    Connector_1                         = $("#addToCart").attr("Connector_1");
-    Connector_2                         = $("#addToCart").attr("Connector_2");
+    Connector_Desc_1                    = $("#addToCart").attr("Connector_Desc_1");
+    Connector_Desc_2                    = $("#addToCart").attr("Connector_Desc_2");
     Calc_2                              = $("#addToCart").attr("Calc_2");
     Calc_3                              = $("#addToCart").attr("Calc_3");
     Calc_4                              = $("#addToCart").attr("Calc_4");
@@ -152,6 +159,9 @@ class Shopping {
     LengthDia                           = $("#addToCart").attr("LengthDia");
     JacketVal                           = $("#addToCart").attr("JacketVal");
     TestDataVal                         = $("#addToCart").attr("TestDataVal");
+    RotatingImages1                     = $("#addToCart").attr("rotating_images_1");
+    RotatingImages2                     = $("#addToCart").attr("rotating_images_2");
+    PhaseMatch                          = $("#addToCart").attr("PhaseMatch");
 
     var ParamsSendingToCartPage = "";
     ParamsSendingToCartPage     = {
@@ -166,11 +176,13 @@ class Shopping {
       "Frequency_Range":Frequency_Range,
       "Insertion_Loss":Insertion_Loss,
       "Less_Connectors":Less_Connectors,
-      "PartMinimum_Inside_Bend_RadiusNumber":Minimum_Inside_Bend_Radius,
+      "Minimum_Inside_Bend_Radius":Minimum_Inside_Bend_Radius,
       "Return_Loss":Return_Loss,
       "Solder":Solder,
       "Connector_1":Connector_1,
       "Connector_2":Connector_2,
+      "Connector_Desc_1":Connector_Desc_1,
+      "Connector_Desc_2":Connector_Desc_2,
       "Calc_2":Calc_2,
       "Calc_3":Calc_3,
       "Calc_4":Calc_4,
@@ -183,6 +195,10 @@ class Shopping {
       "LengthDia":LengthDia,
       "JacketVal":JacketVal,
       "TestDataVal":TestDataVal,
+      "RotatingImages1":RotatingImages1,
+      "RotatingImages2":RotatingImages2,
+      "CableType":CableType,
+      "PhaseMatch":PhaseMatch
     };
 
     $.ajax({
