@@ -32,15 +32,13 @@ class Logs{
         url           : url+'checkLogin.php',
         contentType   : "application/x-www-form-urlencoded;",
       }).done(function(response){
-          console.log(response);
+          
           response = (JSON.parse(response));
           if(response.success==true){
             var  username = response.username;
-            Dashboard = new Dashboard();
             Dashboard.GetReferenceName();
           }else{
             var  error = response.success;
-            Dashboard = new Dashboard();
             Dashboard.SignInOnly();
 
           }
@@ -54,7 +52,7 @@ class Logs{
 
     SignInOnly(){
           $("#error_log").hide();
-          var GoToUrl     = $('#GoBackUrl').val();
+          var GoToUrl     = $("#GoToUrl").attr("GoBackUrl");
           $.ajax({
             type          : "POST",
             url           : url+'userLogin.php',
@@ -63,7 +61,6 @@ class Logs{
                               "userPassword":$('#password').val(),
                               'action':'LOGIN'}
           }).done(function(response){
-              console.log(response)
 
            var returned_json = JSON.parse(response);
             $("#inner").show();
@@ -74,18 +71,18 @@ class Logs{
             var response_result = returned_json['success'];
             var getBackError = returned_json['userInformation'].errorMsg
 
-            console.log(response_result);
+
             if(response_result == false){
               $("#error_log").show();
               $("#error_log").html(getBackError);
             }else{
-              Dashboard = new Dashboard();
-              if(GoBackUrl=='Cart'){
+
+              if(GoToUrl=='Cart'){
                 Dashboard.GetReferenceName();
               }else
                 Dashboard.GoToDashBoard(returned_json['userInformation'].rfcoaxUserName);
             }
-           // $("#load-container").html("response_result <br><br><br>"+response);
+
           });
 
     }

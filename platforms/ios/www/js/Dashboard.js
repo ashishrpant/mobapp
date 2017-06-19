@@ -67,7 +67,7 @@ class Dashboard {
         $("#home").hide();
         $('#navbar').collapse('hide');
         $('#nav_child').show();
-        $('#GoBackUrl').val('Cart');
+
 
         // assign active class to footer navigation
         var activeNavigationClass = 'rc_footer_active_nav',
@@ -77,6 +77,7 @@ class Dashboard {
                             .removeClass(activeNavigationClass);
 
         $("#load-container").html(response);
+        $("#GoToUrl").attr("GoBackUrl", "Cart");
     });
   }
   GetReferenceName(){
