@@ -2,10 +2,16 @@
   font-size: 12px;
 }
 
+.rc--shopping_cart {
+  margin-bottom: 50px;
+}
+
 .shopping_cart--sn {
-  border-bottom: 1px solid #ddd;
   display: block;
+  height: 45px;
   font-size: 12px;
+  line-height: 35px;
+  overflow: hidden;
   padding-bottom: 5px;
   width: 100%;
 }

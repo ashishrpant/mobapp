@@ -43,32 +43,30 @@ class Shopping {
       shopping_cart_body = shopping_cart_body +
         // Serial Number
         '<div class="rc_shopping_cart--items">' +
-        '<div class="shopping_cart--sn"><strong>SN:</strong> ' + cartItems.serial_number + '</div> ' +
-        '<table id="cart" class="table table-condensed">' +
+        '<div class="shopping_cart--sn">' +
+          '<strong>SN:</strong> ' + cartItems.serial_number +
+          '<div class="btn-group pull-right" role="group" aria-label="Cart Actions">' +
+            '<button type="button" class="btn btn-info"><i class="fa fa-refresh"></i></button>' +
+            '<button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>' +
+          '</div>' +
+        '</div> ' +
+        '<table id="cart" class="table table-condensed table-bordered">' +
         '<thead>' +
         '<tr>' +
-        '<th class="shopping_cart--table_header">Quantity</th>' +
-        '<th class="shopping_cart--table_header text-center">Unit Price ($)</th>' +
-        '<th class="shopping_cart--table_header text-center">Disc Price ($)</th>' +
+          '<th class="shopping_cart--table_header">Quantity</th>' +
+          '<th class="shopping_cart--table_header text-center">Unit Price ($)</th>' +
+          '<th class="shopping_cart--table_header text-center">Disc Price ($)</th>' +
+          '<th class="shopping_cart--table_header text-center">Subtotal ($)</th>' +
         '</tr>' +
         '</thead>' +
         '<tbody>' +
         '<tr>' +
-        '<td data-th="Quantity">' +
-        '<input type="number" class="shopping_cart--quantity form-control text-center" value="1">' +
-        '</td>' +
-        '<td data-th="Price" class="text-center">' + cartItems.price_per_unit + '</td>' +
-        '<td data-th="Price" class="text-center">' + cartItems.price_per_unit + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>' +
-        '<div class="btn-group" role="group" aria-label="Cart Actions">' +
-        '<button type="button" class="btn btn-default"><i class="fa fa-refresh"></i></button>' +
-        '<button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>' +
-        '</div>' +
-        '</td>' +
-        '<td data-th="Subtotal" class="text-right">Subtotal:</td>' +
-        '<td data-th="Subtotal">' + sub_total + '</td>' +
+          '<td data-th="Quantity">' +
+            '<input type="number" class="shopping_cart--quantity form-control text-center" value="1">' +
+          '</td>' +
+          '<td data-th="Price" class="text-center">' + cartItems.price_per_unit + '</td>' +
+          '<td data-th="Price" class="text-center">' + cartItems.price_per_unit + '</td>' +
+          '<td data-th="Subtotal" class="text-center">' + sub_total + '</td>' +
         '</tr>' +
         '</tbody>' +
         '</table>' +
@@ -76,9 +74,9 @@ class Shopping {
     });
 
     shopping_cart_foot = '<div class="shopping_cart--sn"><strong>Total $</strong> ' + sub_total + '</div> ' +
-      '<div class="btn-group" role="group" aria-label="Cart Actions">' +
-      '<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>' +
-      '<a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></button>' +
+      '<div class="btn-group shopping_cart--checkout_buttons" role="group" aria-label="Cart Actions">' +
+        '<a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>' +
+        '<a href="#" class="btn btn-success">Checkout <i class="fa fa-angle-right"></i></a></button>' +
       '</div>';
 
 
@@ -219,7 +217,7 @@ class Shopping {
         var Shop = new Shopping();
         Shop.GetCartCount();
       }
-      
+
       showMessageElem.addClass(alertClass)
                      .find('.alert_message--js')
                      .html(response.message)
