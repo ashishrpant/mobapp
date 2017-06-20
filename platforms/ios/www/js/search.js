@@ -356,11 +356,57 @@ class Search {
         '</li>' +
         '</ul>' +
         '<div class="alert alert-info" role="alert">' +
-        '<strong>NOTE:</strong> : All prices are per <strong>EACH</strong> cable.' +
-        '</div><div id="show_msg" role="alert" style="display:none;"></div>' ;
+          '<strong>NOTE:</strong> : All prices are per <strong>EACH</strong> cable.' +
+        '</div>' +
+        '<div id= "show_msg" role= "alert" class= "alert-dismissible" style= " display:none;">' +
+          '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+          '</button>' +
+          '<span class="alert_message--js"></span>' +
+        '</div>';
 
-      technical_spec = technical_spec+('<div class="form-group"><input type="text" style="width:30px;" name="quantity" id="quantity" class="form-control pull-left" /><input type="button" onclick="Shopping.AddCart();" PhaseMatch="'+phase_mat+'" rotating_images_2="'+rotating_images_2+'" rotating_images_1="'+rotating_images_1+'" LengthDia="'+length_dia+'" JacketVal="'+jacket_type+'" TestDataVal="'+test_data_val+'" PriceCap="'+PriceCap+'" Description="'+Description+'" Calc_8="'+Calc_8+'"  Calc_7="'+Calc_7+'" Calc_6="'+Calc_6+'" Calc_5="'+Calc_5+'" Calc_4="'+Calc_4+'"  Calc_3="'+Calc_3+'" Calc_2="'+Calc_2+'" Image_Con_2="'+rotating_images_2+'" Image_Con_1="'+rotating_images_1+'" C1_Ref_Plane="'+C1_Ref_Plane+'" C2_Ref_Plane="'+C2_Ref_Plane+'" Frequency_Range="'+Frequency_Range+'" Insertion_Loss="'+Insertion_Loss+'" Less_Connectors="'+Less_Connectors+'" Minimum_Inside_Bend_Radius="'+Minimum_Inside_Bend_Radius+'" Return_Loss="'+Return_Loss+'" Solder="'+Solder+'"  Between_Ref_Planes="'+Between_Ref_Planes+'" CableType="'+CableType+'" Overall_End_To_End="'+Overall_End_To_End+'" partNumber="'+PartNumber+'" Connector_Desc_1="'+Connector_Desc_1+'" Connector_Desc_2="'+Connector_Desc_2+'" pricePerUnit="'+PricePerUnit+'" name="addToCart" id="addToCart" value="Add to cart" class="btn btn-primary" />&nbsp;<input type="button" name="technical_drawing" id="technical_drawing" value="View Technical Drawing" class="btn btn-default" /></div>');
-
+      technical_spec = technical_spec +
+        ('<div class= " form-group">'+
+          '<input type= " text" style= " width:30px;" name= " quantity" id= " quantity" class= " form-control pull-left" />'+
+          '<input type= " button" onclick= " Shopping.AddCart();"'+
+                  ' PhaseMatch = "' + phase_mat + '" '+
+                  ' rotating_images_2 = "' + rotating_images_2 + '"' +
+                  ' rotating_images_1 = "' + rotating_images_1 + '"' +
+                  ' LengthDia = "'+length_dia + '"' +
+                  ' JacketVal = "'+jacket_type + '"' +
+                  ' TestDataVal = "' + test_data_val + '"' +
+                  ' PriceCap = "' + PriceCap + '"' +
+                  ' Description = "' + Description + '"' +
+                  ' Calc_8 = "' + Calc_8 + '"' +
+                  ' Calc_7 = "' + Calc_7 + '"' +
+                  ' Calc_6 = "' + Calc_6 + '"' +
+                  ' Calc_5 = "' + Calc_5 + '"' +
+                  ' Calc_4 = "' + Calc_4 + '"  ' +
+                  ' Calc_3 = "' + Calc_3 + '"' +
+                  ' Calc_2 = "' + Calc_2 + '" ' +
+                  ' Image_Con_2 = "' + rotating_images_2 + '"' +
+                  ' Image_Con_1 = "' + rotating_images_1 + '"' +
+                  ' C1_Ref_Plane = "' + C1_Ref_Plane + '" ' +
+                  ' C2_Ref_Plane = "' + C2_Ref_Plane + '"' +
+                  ' Frequency_Range = "' + Frequency_Range + '" ' +
+                  ' Insertion_Loss = "' + Insertion_Loss + '" ' +
+                  ' Less_Connectors = "' + Less_Connectors + '" '+
+                  ' Minimum_Inside_Bend_Radius = "' + Minimum_Inside_Bend_Radius + '" ' +
+                  ' Return_Loss= "' + Return_Loss + '" ' +
+                  ' Solder = "' + Solder + '" ' +
+                  ' Between_Ref_Planes = "' + Between_Ref_Planes + '" ' +
+                  ' CableType = "' + CableType + '" ' +
+                  ' Overall_End_To_End = "' + Overall_End_To_End + '" ' +
+                  ' partNumber = "' + PartNumber + '"' +
+                  ' Connector_Desc_1 = "' + Connector_Desc_1 + '"' +
+                  ' Connector_Desc_2 = "' + Connector_Desc_2 + '"' +
+                  ' pricePerUnit = "' + PricePerUnit + '"' +
+                  ' name = " addToCart"' +
+                  ' id = " addToCart"' +
+                  ' value = " Add to cart"' +
+                  ' class = " btn btn-primary" />&nbsp;'+
+          '<input type= " button" name= " technical_drawing" id= " technical_drawing" value= " View Technical Drawing" class= " btn btn-default" />' +
+        '</div>');
 
 
       technical_spec = technical_spec +
