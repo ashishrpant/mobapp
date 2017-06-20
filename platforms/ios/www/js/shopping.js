@@ -7,23 +7,14 @@ class Shopping {
 
 
   ViewCart() {
-    // $.ajax({
-    //     type          : "POST",
-    //     url           : url+'loadCart.php',
-    //
-    //     contentType   : "application/x-www-form-urlencoded;",
-    // }).done(function(response) {
-    //
-    // });
+    $.ajax({
+        type          : "POST",
+        url           : url+'loadCart.php',
 
-    var response = '{"success" : true,"cart_items" : ' +
-      '[{"id" : "14809","serial_number" : "S086MMHF-12","order_quantity" : "1","price_per_unit" : "38","user_id" : "0","session_id" : "362727890cfc59f5de51d2d99233fb67","date_added" : "05/24/2017 20:56:48","price_breakdown" : " 1-9 $38.00, 10-24 $36.10, 25-49 $34.20, 50-99 $32.30, 100-249 $30.40, 250-499 $28.50, 500+ $26.60 USD each","valid_usa" : "0"' +
-      '},' +
-      '{"id" : "14810","serial_number" : "V086FFHF-12","order_quantity" : "1","price_per_unit" : "196","user_id" : "0","session_id" : "362727890cfc59f5de51d2d99233fb67","date_added" : "05/24/2017 21:25:11","price_breakdown" : " 1-9 $196.00, 10-24 $186.20, 25-49 $176.40, 50-99 $166.60, 100-249 $156.80, 250-499 $147.00, 500+ $137.20 USD each","valid_usa" : "0"}' +
-      ']' +
-      '}';
+        contentType   : "application/x-www-form-urlencoded;",
+    }).done(function(response) {
 
-
+    console.log(response);
     response = (JSON.parse(response));
     var param_div     = '';
 
@@ -37,6 +28,7 @@ class Shopping {
     shopping_cart_head = '<div class="rc--shopping_cart">';
 
     $.each(response["cart_items"], function(ind, cartItems) {
+
       param_div = param_div + '<div>';
       sub_total = sub_total + (cartItems.price_per_unit * cartItems.order_quantity);
 
@@ -72,12 +64,16 @@ class Shopping {
         '</table>' +
         '</div>';
     });
-
+    if(sub_total>0) {
     shopping_cart_foot = '<div class="shopping_cart--sn"><strong>Total $</strong> ' + sub_total + '</div> ' +
       '<div class="btn-group shopping_cart--checkout_buttons" role="group" aria-label="Cart Actions">' +
         '<a href="#" class="btn btn-warning" onclick="Navigation.SearchPage();"><i class="fa fa-angle-left"></i> Continue Shopping</a>' +
         '<a href="#" class="btn btn-success" onclick="Shopping.PreviewOrder()">Proceed to Checkout <i class="fa fa-angle-right"></i></a></button>' +
       '</div>';
+    }else{
+      shopping_cart_head = '<div class="panel panel-default">'+
+      '<div class="panel-heading">No items on your cart.</div></div>';
+    }
 
 
     var main_content = '<div class="page-wrapper">' +
@@ -94,6 +90,7 @@ class Shopping {
     $('#navbar').collapse('hide');
     $('#nav_child').show();
     $("#load-container").html(main_content);
+  });
   }
 
   AddCart(){
@@ -130,6 +127,7 @@ class Shopping {
     var Connector_Desc_2                = "";
     var CableType                       = "";
     var PhaseMatch                      = "";
+    var Quantity                        = "";
 
     var addToCartButton = $('#addToCart')
 
@@ -163,6 +161,7 @@ class Shopping {
     RotatingImages1                     = addToCartButton.attr("rotating_images_1");
     RotatingImages2                     = addToCartButton.attr("rotating_images_2");
     PhaseMatch                          = addToCartButton.attr("PhaseMatch");
+    Quantity                            = $("#quantity").val();
 
     var ParamsSendingToCartPage = {
       "PartNumber" : PartNumber,
@@ -198,7 +197,8 @@ class Shopping {
       "RotatingImages1" : RotatingImages1,
       "RotatingImages2" : RotatingImages2,
       "CableType" : CableType,
-      "PhaseMatch" : PhaseMatch
+      "PhaseMatch" : PhaseMatch,
+      "Quantity" : Quantity
     };
 
     $.ajax({
@@ -241,21 +241,21 @@ class Shopping {
   }
 
   PreviewOrder(){
-    // $.ajax({
-    //     type          : "POST",
-    //     url           : url+'loadCart.php',
-    //
-    //     contentType   : "application/x-www-form-urlencoded;",
-    // }).done(function(response) {
-    //
-    // });
+    $.ajax({
+        type          : "POST",
+        url           : url+'loadCart.php',
 
-    var response = '{"success":true,"cart_items":' +
-      '[{"id":"14809","serial_number":"S086MMHF-12","order_quantity":"1","price_per_unit":"38","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 20:56:48","price_breakdown":" 1-9 $38.00, 10-24 $36.10, 25-49 $34.20, 50-99 $32.30, 100-249 $30.40, 250-499 $28.50, 500+ $26.60 USD each","valid_usa":"0"' +
-      '},' +
-      '{"id":"14810","serial_number":"V086FFHF-12","order_quantity":"1","price_per_unit":"196","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 21:25:11","price_breakdown":" 1-9 $196.00, 10-24 $186.20, 25-49 $176.40, 50-99 $166.60, 100-249 $156.80, 250-499 $147.00, 500+ $137.20 USD each","valid_usa":"0"}' +
-      ']' +
-      '}';
+        contentType   : "application/x-www-form-urlencoded;",
+    }).done(function(response) {
+
+
+
+    // var response = '{"success":true,"cart_items":' +
+    //   '[{"id":"14809","serial_number":"S086MMHF-12","order_quantity":"1","price_per_unit":"38","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 20:56:48","price_breakdown":" 1-9 $38.00, 10-24 $36.10, 25-49 $34.20, 50-99 $32.30, 100-249 $30.40, 250-499 $28.50, 500+ $26.60 USD each","valid_usa":"0"' +
+    //   '},' +
+    //   '{"id":"14810","serial_number":"V086FFHF-12","order_quantity":"1","price_per_unit":"196","user_id":"0","session_id":"362727890cfc59f5de51d2d99233fb67","date_added":"05/24/2017 21:25:11","price_breakdown":" 1-9 $196.00, 10-24 $186.20, 25-49 $176.40, 50-99 $166.60, 100-249 $156.80, 250-499 $147.00, 500+ $137.20 USD each","valid_usa":"0"}' +
+    //   ']' +
+    //   '}';
 
 
     response = (JSON.parse(response));
@@ -295,6 +295,8 @@ class Shopping {
         '</tr>' +
         '</tbody>';
     });
+
+    if(sub_total>0) {
     shopping_cart_foot ='<tfoot>'+
       '<tr>' +
       '<td></td>' +
@@ -305,11 +307,15 @@ class Shopping {
       '</tfoot>' +
       '</table>' +
       '</div>';
+
     shopping_cart_foot = shopping_cart_foot+'<div>&nbsp;</div><div class="btn-group" role="group" aria-label="Cart Actions">' +
       '<button type="button" class="btn btn-success" onclick="Navigation.SearchPage()"><i class="fa fa-angle-left"></i> Continue Shopping</button>' +
       '<button type="button" class="btn btn-info" onclick="Logs.CheckLogin()">Proceed To Order <i class="fa fa-angle-right"></i></button>' +
       '</div>';
-
+    }else{
+      shopping_cart_head = '<div class="panel panel-default">'+
+      '<div class="panel-heading">No items on your cart.</div></div>';
+    }
 
     var main_content = '<div class="page-wrapper">' +
       '<div class="page-header"><h4>REVIEW YOUR ORDER</h4></div>' +
@@ -325,5 +331,7 @@ class Shopping {
     $('#navbar').collapse('hide');
     $('#nav_child').show();
     $("#load-container").html(main_content);
-  }
+    });
+    }
+
 }
