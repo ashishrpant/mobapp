@@ -64,13 +64,13 @@ class Shopping {
         '</table>' +
         '</div>';
     });
-    if(sub_total>0) {
-    shopping_cart_foot = '<div class="shopping_cart--sn"><strong>Total $</strong> ' + sub_total + '</div> ' +
-      '<div class="btn-group shopping_cart--checkout_buttons" role="group" aria-label="Cart Actions">' +
-        '<a href="#" class="btn btn-warning" onclick="Navigation.SearchPage();"><i class="fa fa-angle-left"></i> Continue Shopping</a>' +
-        '<a href="#" class="btn btn-success" onclick="Shopping.PreviewOrder()">Proceed to Checkout <i class="fa fa-angle-right"></i></a></button>' +
+    if (sub_total > 0) {
+      shopping_cart_foot = '<div class="shopping_cart--sn text-right"><strong>Total $</strong> ' + sub_total + '</div> ' +
+      '<div class="shopping_cart--checkout_buttons" aria-label="Cart Actions">' +
+        '<a href="#" class="rc-link shopping_cart--continue_shopping pull-left" onclick="Navigation.SearchPage();">Continue Shopping</a>' +
+        '<a href="#" class="btn btn-success pull-right" onclick="Shopping.PreviewOrder()">Checkout</a></button>' +
       '</div>';
-    }else{
+    } else {
       shopping_cart_head = '<div class="panel panel-default">'+
       '<div class="panel-heading">No items on your cart.</div></div>';
     }
