@@ -45,7 +45,7 @@ class Dashboard {
   ViewOrderList(){
     $.ajax({
       type          : "POST",
-      url           : localurl+'getOrderList.html',
+      url           : url+'loadOrdersHistory.php',
       contentType   : "application/x-www-form-urlencoded;"
     }).done(function(response) {
       $("#inner").show();
@@ -53,7 +53,28 @@ class Dashboard {
       $('#navbar').collapse('hide');
       $('#nav_child').show();
 
-      $("#load-container").html(response);
+      response = (JSON.parse(response));
+
+      console.log(response);
+      var items_list_head = '<div class="page-wrapper"><div class="page-header"><h4>MY ORDERS</h4></div>';
+      var items_list_body = '';
+      var items_list_foot = '';
+
+      $.each(response["ListOrders"], function(ind, orderList) {
+        items_list_body = items_list_body + '<div class="panel panel-default bs-callout-danger"><div class="panel-body"><div><div class="pull-left date">'+
+        '<span class="day">30</span>'+
+        '<span class="month">Jun</span>'+
+        '<span class="year">2009</span>'+
+        '</div><div style="padding-left:80px;">'+
+        '<a href="#"><strong>W080216002</strong></a>'+
+        '<span class="badge pull-right">$390.00</span>'+
+        '<div>'+
+          '<button class="btn btn-default" type="button">View order <i class="fa fa-eye fa-fw" aria-hidden="true"></i></button>'+
+          '<button class="btn btn-default" type="button">Reorder <i class="fa fa-exchange fa-fw" aria-hidden="true"></i></button>'+
+          '</div></div></div></div></div>';
+
+      });
+      $("#load-container").html(items_list_head+items_list_body);
 
     });
   }

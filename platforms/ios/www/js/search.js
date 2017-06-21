@@ -367,8 +367,8 @@ class Search {
 
       technical_spec = technical_spec +
         ('<div class= " form-group">'+
-          '<input type= " text" style= " width:30px;" name= " quantity" id= " quantity" class= " form-control pull-left" />'+
-          '<input type= " button" onclick= " Shopping.AddCart();"'+
+          '<input type= "number" value="1" style= " width:50px;" min="1" max="500" name= "quantity" id= "quantity" class= "form-control pull-left" />'+
+          '&nbsp;&nbsp;<button type= "button" onclick= " Shopping.AddCart();"'+
                   ' PhaseMatch = "' + phase_mat + '" '+
                   ' rotating_images_2 = "' + rotating_images_2 + '"' +
                   ' rotating_images_1 = "' + rotating_images_1 + '"' +
@@ -401,11 +401,10 @@ class Search {
                   ' Connector_Desc_1 = "' + Connector_Desc_1 + '"' +
                   ' Connector_Desc_2 = "' + Connector_Desc_2 + '"' +
                   ' pricePerUnit = "' + PricePerUnit + '"' +
-                  ' name = " addToCart"' +
-                  ' id = " addToCart"' +
-                  ' value = " Add to cart"' +
-                  ' class = " btn btn-primary" />&nbsp;'+
-          '<input type= " button" name= " technical_drawing" id= " technical_drawing" value= " View Technical Drawing" class= " btn btn-default" />' +
+                  ' name = "addToCart"' +
+                  ' id = "addToCart"' +
+                  ' class = " btn btn-primary">Add to cart </button>&nbsp;&nbsp;'+
+                  '<a  href="#" class="btn btn-success">Technical Drawing</a>'+
         '</div>');
 
 
