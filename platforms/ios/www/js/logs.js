@@ -51,6 +51,9 @@ class Logs{
      */
 
     SignInOnly(){
+
+
+
           $("#error_log").hide();
           var GoToUrl     = $("#GoToUrl").attr("GoBackUrl");
           $.ajax({
@@ -84,6 +87,13 @@ class Logs{
             }
 
           });
+
+
+
+
+
+
+
 
     }
 
