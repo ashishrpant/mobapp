@@ -355,7 +355,7 @@ class Search {
         '<strong>Manufacturing Lead Time: </strong> <br>Most orders <7 business days. Large orders of 100+ units total may be 2-3 weeks. Parts are always in stock to build any order quantity.' +
         '</li>' +
         '</ul>' +
-        '<div class="alert alert-info" role="alert">' +
+        '<div class="alert alert-neutral" role="alert">' +
           '<strong>NOTE:</strong> : All prices are per <strong>EACH</strong> cable.' +
         '</div>' +
         '<div id= "show_msg" role= "alert" class= "alert-dismissible" style= " display:none;">' +
@@ -404,7 +404,7 @@ class Search {
                   ' name = "addToCart"' +
                   ' id = "addToCart"' +
                   ' class = " btn btn-primary">Add to cart </button>&nbsp;&nbsp;'+
-                  '<a  href="#" class="btn btn-success">Technical Drawing</a>'+
+                  '<a  href="#" class="rc-link">Technical Drawing</a>'+
         '</div>');
 
 

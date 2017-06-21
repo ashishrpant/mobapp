@@ -25,6 +25,10 @@
   width: 50px;
 }
 
+.shopping_cart--continue_shopping {
+  line-height: 40px;
+}
+
 /*.table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
 }
