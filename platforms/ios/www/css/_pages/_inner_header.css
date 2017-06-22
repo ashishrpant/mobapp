@@ -1,5 +1,6 @@
 .rc--inner_header {
   background: #00b4ff; /* Old browsers */
+  border: 0 none;
   margin-bottom: 0;
   position: fixed;
   top: 0;
