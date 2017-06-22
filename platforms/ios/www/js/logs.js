@@ -46,6 +46,30 @@ class Logs{
       //var response = '{ "success" :true ,"username":"Ashish"}';
 
     }
+
+    SignInForm(){
+      $.ajax({
+        type          : "POST",
+        url           : localurl+'getLogin.html',
+        contentType   : "application/x-www-form-urlencoded;"
+      }).done(function(response) {
+        $("#inner").show().addClass('rc--inner_header');
+        $("#home").hide();
+        $('#navbar').collapse('hide');
+        $('#nav_child').show();
+
+
+        // assign active class to footer navigation
+        var activeNavigationClass = 'rc_footer_active_nav',
+          footerNavigationElem = $('.rc_inner_footer--js');
+
+        footerNavigationElem.find('.' + activeNavigationClass)
+          .removeClass(activeNavigationClass);
+
+        $("#load-container").html(response);
+      });
+    }
+
     /**
      * Deals with login, calls api returns back false for error, true for success
      */

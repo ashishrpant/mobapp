@@ -160,6 +160,30 @@ class Navigation {
         });
     }
 
+  CheckLog(){
+    $.ajax({
+      type          : "POST",
+      url           : url+'checkLogin.php',
+      contentType   : "application/x-www-form-urlencoded;",
+    }).done(function(response){
+
+
+      response = (JSON.parse(response));
+
+      console.log(response);
+      console.log(response['success']);
+      if(response['success']==true){
+        var  username = response['username'];
+        Dashboard.GoToDashBoard(username);
+      }else{
+
+        Logs.SignInForm();
+
+      }
+    });
+    //var response = '{ "success" :true ,"username":"Ashish"}';
+
+  }
     // AddActiveClassOnFooter (addActiveClassElem, isPageClass) {
     //   // assign active class to footer navigation
     //   var activeNavigationClass = 'rc_footer_active_nav',
